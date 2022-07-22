@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+		.centered_text{
+			text-align: center;
+		}
+		.custom_font1{
+			font-size: 0.8em;
+		}
+		.flex_box_row{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		.info_card{
+			height: 32rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1rem;
+			overflow: auto;
+		}
+		.info_card p{
+			text-align: justify;
+		}
+
+		.card{
+			background-color: #F7F5F2;
+		}
+		.card-text{
+			background-color: #F56D91;
+			padding: 10px;
+			border-radius: 30px;
+		}
+		.jumbotron{
+			background-color: #DFDFDE;
+		}
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #7a7aab;">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;font-size: 20px;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<a class="navbar-brand" href="./intro.html" style="color:white;font-size: 20px;">Intro</a>
+	<a class="navbar-brand" href="./compare.html" style="color:white;font-size: 20px;">Compare</a>
+
+</nav>
+			  
+<div class="jumbotron">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>Disc Scheduling Algorithms</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div>
+
+
+		
+	<div class="container" >
+			<div class="row">
+			  <div style ="padding:1rem" class="col-md-4">
+				<div class="card">
+  					<div class="info_card">
+    					<div><h2 class="card-title" style="text-align: center; letter-spacing: 0.01em;">FCFS</h2>
+    					<h4 class="card-subtitle mb-2 text-muted custom_font1" style="text-align: center;">(First-Come-First-Serve)</h4></div>
+    					<p class="card-text">
+							FCFS (First-Come-First-Serve) is the easiest disk scheduling algorithm among all the scheduling algorithms. In the FCFS disk scheduling algorithm, each input/output request is served in the order in which the requests arrive. 
+    					</p>
+    					<div class="flex_box_row"><a href="./fcfs_info.html" class="card-link">Learn More</a>
+    					<a href="./fcfs.html" class="card-link">Try simulation</a></div>
+  					</div>
+				</div>
+				<br>
+				
+				<div class="card">
+					<div class="info_card">
+					  <div><h2 class="card-title" style="text-align: center;  letter-spacing: 0.01em;">C-SCAN</h2>
+					  <h4 class="card-subtitle mb-2 text-muted custom_font1" style="text-align: center;">(Circular-SCAN)</h4></div>
+					  <p class="card-text">
+						In the C-SCAN disk scheduling algorithm, the disk head starts to move towards one of the ends and service the requests that come in its path and reach the end. After doing this, the direction of the head is reversed. The head reaches the other end without satisfying any request and then it goes on servicing the requests which are remaining.
+					  </p>
+					  <div class="flex_box_row">
+					  <a href="./cscan_info.html" class="card-link">Learn More</a>
+					  <a href="./cscan.html" class="card-link">Try simulation</a></div>
+					</div>
+			  </div>
+				
+					
+					
+			  </div>
+	
+			  <div style ="padding:1rem" class="col-md-4">
+
+
+				<div class="card">
+					<div class="info_card">
+					  <div><h2 class="card-title" style="text-align: center;  letter-spacing: 0.01em;">SSTF</h2>
+					  <h4 class="card-subtitle mb-2 text-muted custom_font1" style="text-align: center;">(Shortest-Seek-Time-First)</h4></div>
+					  <p class="card-text">
+						In SSTF (shortest seek time first) scheduling, we have to calculate the seek time first. and after calculating the seek time, each request will be served on the basis of seek time. The request which is close to the disk arm will be first executed.
+					  </p>
+					  <div class="flex_box_row">
+					  <a href="./sstf_info.html" class="card-link">Learn More</a>
+					  <a href="./sstf.html" class="card-link">Try simulation</a>
+					  </div>
+					</div>
+			  </div>
+
+
+				  
+				<br>
+
+
+				<div class="card">
+					<div class="info_card">
+					  <div><h2 class="card-title" style="text-align: center;  letter-spacing: 0.04em;">LOOK</h2>
+					  <h4 class="card-subtitle mb-2 text-muted custom_font1" style="text-align: center;"></h4></div>
+					  <p class="card-text">
+						Look scheduling is an enhanced version of SCAN disk scheduling. Look disk scheduling is the same as SCAN disk scheduling, but in this scheduling, instead of going till the last track, we go till the last request and then change the direction.
+					  </p>
+					  <div class="flex_box_row">
+					  <a href="./look_info.html" class="card-link">Learn More</a>
+					  <a href="./look.html" class="card-link">Try simulation</a></div>
+					</div>
+			  </div>
+					
+					  
+			  </div>
+	
+			  <div style ="padding:1rem" class="col-md-4">
+
+
+				<div class="card">
+					<div class="info_card">
+					  <div><h2 class="card-title" style="text-align: center;  letter-spacing: 0.01em;">SCAN</h2>
+					  <h4 class="card-subtitle mb-2 text-muted custom_font1" style="text-align: center;"></h4></div>
+					  <p class="card-text">
+						In this algorithm, we move the disk arm into a specific direction. Each request is addressed that comes in its path, and when it comes into the end of the disk, then the disk arm will move reverse, and all the requests are addressed that are arriving in its path. 
+					  </p>
+					  <div class="flex_box_row">
+					  <a href="./scan_info.html" class="card-link">Learn More</a>
+					  <a href="./scan.html" class="card-link">Try simulation</a></div>
+					</div>
+			  </div>
+
+				  
+				<br>
+				<div class="card">
+  					<div class="info_card">
+    					<div><h2 class="card-title" style="text-align: center;  letter-spacing: 0.04em;">C-LOOK</h2>
+    					<h4 class="card-subtitle mb-2 text-muted custom_font1" style="text-align: center;">(Circular-LOOK)</h4></div>
+    					<p class="card-text">
+							In C-look scheduling, the disk arm moves and service each request till the head reaches its highest request, and after that, the disk arm jumps to the lowest cylinder without servicing any request, and the disk arm moves further and service those requests which are remaining.
+						</p>
+						<div class="flex_box_row">
+    					<a href="./clook_info.html" class="card-link">Learn More</a>
+    					<a href="./clook.html" class="card-link">Try simulation</a></div>
+  					</div>
+				</div>
+					
+			  </div>
+			</div>
+	
+		  
+	</div>
+</div>
+</body>
+</html>

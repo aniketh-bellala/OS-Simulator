@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html style="background-color: #DFDFDE;">
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+        .info_part{
+            display: flex;
+            flex-direction: column;
+            background-color: antiquewhite;
+            padding: 20px;
+        }
+		.info_part p,li{
+			font-size: 1.2em;
+			line-height: 2em;
+		}
+		.go_back{
+			border-radius: 0.2em;
+		}
+
+		.go_back a{
+			text-decoration: none;
+			font-size: 1em;
+		}
+		.go_back button:hover{
+			background-color: rgb(112, 118, 118);
+		}
+
+		.info_part img{
+			width:60%;
+		}
+		p{
+			background-color: #F56D91;
+			padding: 10px;
+			border-radius: 10px;
+
+		}
+		h2{
+			text-align: center;
+		}
+		img{
+			align-self: center;
+		}
+		
+
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7a7aab;">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white;" href="index.html">Home</a>
+            </li>
+		</ul>
+	</div>
+</nav>
+			  
+<div class="jumbotron" style="background-color: #DFDFDE;">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>C-LOOK</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div class="info_part" style="background-color: #F7F5F2;">
+		<h2><b>Introduction</b></h2>
+		<p>
+            C-look means circular-look. It takes the advantages of both the disk scheduling C-SCAN, and Look disk scheduling. In C-look scheduling, the disk arm moves and service each request till the head reaches its highest request, and after that, the disk arm jumps to the lowest cylinder without servicing any request, and the disk arm moves further and service those requests which are remaining.
+        </p>
+		<hr>
+		<h2><b>Advantages</b></h2>
+		<p>
+			
+			1.	There is no starvation in C-look disk scheduling.
+		</p>
+		<p>	
+			2.	The performance of the C-Look scheduling is better than Look disk scheduling.
+		</p>
+		<p>
+			3.	C-look disk scheduling offers low variance in waiting time and response time.
+		</p>
+		
+
+		<hr>
+		<h2><b>Disdvantages</b></h2>
+		<p>
+			
+			1.	In C-Look disk scheduling there may be more overhead to determine the end request.
+		</p>
+		<p>	
+			2.	There is more overhead in calculations.
+		</p>
+		
+		<hr>
+		<h2><b>Example</b></h2>
+		<p>Consider a disk containing 200 tracks (0-100). The request queue contains the track number 93, 176, 42, 148, 27, 14,180 respectively. The current position of the R/W head is 55. The direction is towards the larger value. Calculate the total number of cylinders moved by head using look disk scheduling.</p>
+		<br>
+		<p>
+			As mentioned in the following example, disk contains 200 tracks, so we take a track line between 0 to 199. The current position of the read/write head is 55, So we start at 55, then we move the read/write head (the disk head is moved towards the larger value as mentioned in the given example). When all the requests are addressed, then we calculate the total number of cylinders moved by the head.
+		</p>
+		<br>
+		<img src="./clook.png" alt="clook img">
+		<br>
+		<p>
+            Total number of cylinders moved by the head = (180-55) + (180-14) + (42-14) = 125 + 166 + 28 = 319
+		</p>
+		<br>
+		<button class="go_back" style="width: 80px; margin-left: 500px;"> <a href="index.html"> Go back</a></button>
+
+    
+    </div>
+</body>
+</html>

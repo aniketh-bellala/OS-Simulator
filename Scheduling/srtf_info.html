@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+<link rel="stylesheet" href="./scheduling.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+		
+
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white; padding: 0rem; font-size: 1.2rem; margin:0rem 0.6rem;" href="index.html">Home</a>
+            </li>
+		</ul>
+	</div>
+</nav>
+			  
+<div class="jumbotron">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>Shortest Remaining Time First</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div class="info_part">
+		<h2><b>Introduction</b></h2>
+		<p>Shortest Remaining First (SRTF) is an algorithm in which the process having the smallest execution time is chosen for the next execution. In this scheduling, jobs are put into the ready queue as they come. A process with shortest burst time begins execution. If a process with even a shorter burst time arrives, the current process is removed or preempted from execution, and the shorter job is allocated CPU cycle.</p>
+		<hr>
+		<h2><b>Example</b></h2>
+		<p>In the following example, there are five jobs named as P1, P2, P3, P4 and P5. Their arrival time and burst time are given in the table below.</p>
+		<img src="./srtf_ex.png" alt="table">
+		<br>
+		<div class="steps">
+		<p><b>Step 0)</b> At time=0, P4 arrives and starts execution.</p>
+		<p><b>Step 1)</b> At time=1, Process P3 arrives. But, P4 has a shorter burst time. It will continue execution.</p>
+		<p><b>Step 2)</b> At time=2, process P1 arrives with burst time = 6. The burst time is more than that of P4. <br> Hence, P4 will continue execution.</p>
+		<p><b>Step 3)</b> At time=3, process P4 will finish its execution. The burst time of P3 and P1 is compared. <br> Process P1 is executed because its burst time is lower.</p>
+		<p><b>Step 4)</b> At time=4, process P5 will arrive. The burst time of P3, P5, and P1 is compared. Process P5 <br> is executed because its burst time is lowest. Process P1 is preempted.</p>
+		<p><b>Step 5)</b> At time=5, process P2 will arrive. The burst time of P1, P2, P3, and P5 is compared. Process <br> P2 is executed because its burst time is least. Process P5 is preempted.</p>
+		<p><b>Step 6)</b> At time=6, P2 is executing.</p>
+		<p><b>Step 7)</b> At time=7, P2 finishes its execution. The burst time of P1, P3, and P5 is compared. Process <br> P5 is executed because its burst time is lesser.</p>
+		<p><b>Step 8)</b> At time =10, P5 will finish its execution. The burst time of P1 and P3 is compared. Process <br> P1 is executed because its burst time is less.</p>
+		<p><b>Step 9)</b> At time =15, P1 finishes its execution. P3 is the only process left. It will start execution.</p>
+		<p><b>Step 10)</b> At time =23, P3 finishes its execution.</p>
+		<p><b>Step 11)</b> Let's calculate the average waiting time for above example.</p>
+		</div>
+		<br>
+		<img src="./srtf_gt.png" alt="gt">
+		<br>
+		<p>The Turnaround time and the waiting time are calculated by using the following formula.</p>
+		<strong>Turn Around Time = Completion Time - Arrival Time </strong>
+    	<strong> Waiting Time = Turnaround time - Burst Time </strong>
+		<br>
+		<img src="./srtf_tat.png" alt="tat">
+		<br>
+		<img src="./srtf_cal.png" alt="cal" style="width:32%;">
+		<br>
+		<br>
+		<h2><b>Advantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>Short processes are handled very quickly. </li>
+                <li>The system also requires very little overhead since it only makes a decision <br> when a process completes or a new process is added.</li>
+                <li> When a new process is added the algorithm only needs to compare the currently executing  <br>process with the new process, ignoring all other processes currently waiting to execute.</li>
+			</ol>
+		</div>
+		<br>
+		<h2><b>Disadvantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>It has the potential for process starvation. </li>
+				<li>Long processes may be held off indefinitely <br> if short processes are continually added.</li>
+			</ol>
+		</div>
+		<br>
+		<button class="go_back"> <a href="index.html">Go back</a></button>
+
+    
+    </div>
+</body>
+</html>

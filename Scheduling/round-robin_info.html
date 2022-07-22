@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="./scheduling.css">
+
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		/* body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+		 */
+
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white; padding: 0rem; font-size: 1.2rem; margin:0rem 0.6rem;" href="index.html">Home</a>
+            </li>
+		</ul>
+	</div>
+</nav>
+			  
+<div class="jumbotron">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>Round Robin Scheduling</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div class="info_part">
+		<h2><b>Introduction</b></h2>
+		<p>Round Robin scheduling algorithm is one of the most popular scheduling algorithm which can actually be implemented in most of the operating systems. This is the preemptive version of first come first serve scheduling. The Algorithm focuses on Time Sharing. In this algorithm, every process gets executed in a cyclic way. A certain time slice is defined in the system which is called time quantum. Each process present in the ready queue is assigned the CPU for that time quantum, if the execution of the process is completed during that time then the process will terminate else the process will go back to the ready queue and waits for the next turn to complete the execution.</p>
+		<hr>
+		<h2><b>Example</b></h2>
+		<p>In the following example, there are six processes named as P1, P2, P3, P4, P5 and P6. Their arrival time and burst time are given below in the table. The time quantum of the system is 4 units.</p>
+		<img src="./rr_ex.png" alt="table">
+		<br>
+		<div class="steps">
+		<p><b>Step 0)</b> Initially, at time 0, process P1 arrives which will be scheduled for the time slice 4 units. <br>Hence in the ready queue, there will be only one process P1 at starting with CPU burst time 5 units.</p>
+		<p><b>Step 1)</b> Meanwhile the execution of P1, four more processes P2, P3, P4 and P5 arrives in the ready queue. <br> P1 has not completed yet, it needs another 1 unit of time hence it will also be added back to the ready queue.</p>
+		<p><b>Step 2)</b> During the execution of P2, one more process P6 is arrived in the ready queue. Since P2 has not <br> completed yet hence, P2 will also be added back to the ready queue with the remaining burst time 2 units.</p>
+		<p><b>Step 3)</b> Since P3 has been completed, hence it will be terminated and not be added to the ready queue. <br> The next process will be executed is P4.</p>
+		<p><b>Step 4)</b> The next process in the ready queue is P5 with 5 units of burst time. Since P4 is completed <br> hence it will not be added back to the queue.</p>
+		<p><b>Step 5)</b> P5 has not been completed yet; it will be added back to the queue with the remaining burst time of 1 unit.</p>
+		<p><b>Step 6)</b> P1 is completed and will not be added back to the ready queue. The next process P6 <br> requires only 4 units of burst time and it will be executed next.</p>
+		<p><b>Step 7)</b> Since P6 is completed, hence it will not be added again to the queue. There are only two processes <br> present in the ready queue. The Next process P2 requires only 2 units of time.</p>
+		<p><b>Step 8)</b> Now, the only available process in the queue is P5 which requires 1 unit of burst time. <br> Since the time slice is of 4 units hence it will be completed in the next burst.</p>
+		<p><b>Step 9</b>) Let's calculate the average waiting time for above example.</p>
+		</div>
+		<br>
+        <h2><b>Gantt Chart</b></h2>
+		<img src="./rr_gt.png" alt="gt">
+		<br>
+		<p>The Turnaround time and the waiting time are calculated by using the following formula.</p>
+		<strong>Turn Around Time = Completion Time - Arrival Time </strong>
+    	<strong> Waiting Time = Turnaround time - Burst Time </strong>
+		<br>
+		<img src="./rr_tat.png" alt="tat">
+		<br>
+		<img src="./rr_cal.png" alt="cal" style="width:32%;">
+		<br>
+		<br>
+		<h2><b>Advantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>It doesnt face the issues of starvation or convoy effect.</li>
+                <li>All the jobs get a fair allocation of CPU.</li>
+                <li>It deals with all process without any priority</li>
+                <li>If you know the total number of processes on the run queue, then you <br> can also assume the worst-case response time for the same process.</li>
+                <li>This scheduling method does not depend upon burst time. <br> That's why it is easily implementable on the system.</li>
+                <li>Once a process is executed for a specific set of the period, the process is <br> preempted, and another process executes for that given time period.</li>
+                <li>Allows OS to use the Context switching method to save states of preempted processes.</li>
+                <li>It gives the best performance in terms of average response time.</li>
+			</ol>
+		</div>
+		<br>
+		<h2><b>Disadvantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>If slicing time of OS is low, the processor output will be reduced.</li>
+                <li>This method spends more time on context switching</li>
+                <li>Its performance heavily depends on time quantum.</li>
+                <li>Priorities cannot be set for the processes.</li>
+                <li>Round-robin scheduling doesn't give special priority to more important tasks.</li>
+                <li>Decreases comprehension</li>
+                <li>Lower time quantum results in higher the context switching overhead in the system.</li>
+                <li>Finding a correct time quantum is a quite difficult task in this system.</li>
+			</ol>
+		</div>
+		<br>
+		<button class="go_back"> <a href="index.html"> Go back</a></button>
+
+    
+    </div>
+</body>
+</html>

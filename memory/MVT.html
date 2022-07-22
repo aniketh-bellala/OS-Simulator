@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>MFT</title>
+</head>
+
+<body style="background-color: #F7F5F2;">
+
+  <div class="na" style="background-color: #8D8DAA ; padding:2vh; ">
+    <h1 align="center" style="background-color: #8D8DAA;  font-size: 6vh; color: black !important;">Multiprogramming
+      with a Variable Number of Tasks (MVT)</h1>
+    <h1 align="center" style="color: black; font-size: 6vh; color: #8D8DAA;">First Fit - Simulation</h1>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #DFDFDE!important;">
+    <a class="navbar-brand" href="./index.html" style="font-size: 3vh; opacity: 2;">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="./Best-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Best Fit
+          Theory <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="./First-fit.html" style="font-size: 3vh;  padding-left: 4vh;">First Fit Theory <span
+            class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="./Worst-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Worst Fit Theory <span
+            class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="./Next-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Next Fit
+              Theory <span class="sr-only">(current)</span></a>
+        <!-- <a class="nav-item nav-link" href="#" style="font-size: 3vh; padding-left: 4vh;">First Fit (next)</a> -->
+        <!-- <a class="nav-item nav-link" href="#" style="font-size: 3vh; padding-left: 4vh;">Worst Fit(next)</a> -->
+        <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+      </div>
+    </div>
+  </nav>
+
+  <div class="he" style="padding: 4vh; ">
+    <h1><b>Variable (or dynamic) Partitioning in Operating System</b></h1>
+  </div>
+
+  <div class="pa" style="padding: 4vh; font-size: 4vh;">
+    <p>Variable partitioning scheme is also know as <b>dynamic partitioning</b>.Variable partitioning is part of the
+      contiguous allocation technique. It is used to alleviate the problem faced by fixed partitioning. As opposed to
+      fixed partitioning, in variable partitioning, partitions are not created until a process executes. At the time it
+      is read into main memory, the process is given exactly the amount of memory needed. This technique, like the fixed
+      partitioning scheme previously discussed have been replaced by more complex and efficient techniques.</p>
+    <br>
+    <p>The amount of space allocated to a process is the exact amount of space it requires. Thus it does not suffers
+      from internal fragmentation. <b>For example</b>,the initial partition assignment in variable partitioning is shown
+      in figure. This example uses main memory of 1MB. Initially, main memory is empty except for the operating system
+      (100 k). The first four processes A, B, C and D are loaded in, starting where the OS ends, and occupy just enough
+      space for each process. As a result, a hole is left at the end of the memory & this hole is too small for fifth
+      process. (Process E that requires 150K of memory).
+    </p>
+    <br>
+
+    <img src="p1.png" alt="" width="50%"
+      style="display: block; margin-right: auto; margin-left: auto; width: 50%; border: 2px solid black;">
+
+    <br>
+
+    <p>At some point, none of the processes in the memory is ready. The operating system therefore swaps out process B
+      which provides sufficient room to load a new process E. As process E is smaller than process B, another small hole
+      is created.</p>
+
+    <br>
+
+    <b>Methods of Operation in Multiple Variable Partition Allocation</b>
+    <br>
+    <br>
+    <ul>
+      <li style="padding-bottom: 2vh;">In variable partition, a set of holes, of various sizes, is scattered throughout
+        memory at any given time.</li>
+      <li style="padding-bottom: 2vh;">When a process arrives and needs memory, the OS searches for a hole that is large
+        enough for this process</li>
+      <li style="padding-bottom: 2vh;">If the hole is too large, it is divided into two parts. One part is allocated to
+        the arriving process and the other is returned to the set of holes.</li>
+      <li style="padding-bottom: 2vh;">For each partition allocated, the information like base address of partition,
+        size and its status (ALLOCATED) is added to partition description table (PDT).</li>
+
+      <div class="di" style="margin: 4vh 20vh; padding:2vh; border: 2px solid black; background-color: #F56D91;
+        border-radius: 20px;"><b>Partition Table: </b>A partition table is a 64-byte data structure that provides basic
+        information for a computer's operating system about the division of the hard disk drive (HDD) into primary
+        partitions.</div>
+
+      <li style="padding-bottom: 2vh;">When a process terminates, it releases its block of memory. This block of memory
+        is placed back in the set of holes.</li>
+      <li style="padding-bottom: 2vh;">If the new hole is adjacent to other holes, these adjacent holes are merged to
+        form one larger hole.</li>
+    </ul>
+
+    <br>
+
+    <div class="p1"><b style="margin-bottom: 2vh;">Advantage of multiple variable partition system</b>
+    </div>
+
+    <ol style="margin-top:4vh">
+      <li style="padding-bottom: 2vh;"><b>No Internal Fragmentation: </b>In variable Partitioning, space in main memory
+        is allocated strictly according to the need of process, hence there is no case of internal fragmentation. There
+        will be no unused space left in the partition.</li>
+      <li style="padding-bottom: 2vh;"><b>No restriction on Degree of Multiprogramming: </b>More number of processes can
+        be accommodated due to absence of internal fragmentation. A process can be loaded until the memory is empty.
+      </li>
+      <li style="padding-bottom: 2vh;"><b>No Limitation on the size of the process: </b>In Fixed partitioning, the
+        process with the size greater than the size of the largest partition could not be loaded and process can not be
+        divided as it is invalid in contiguous allocation technique. Here, In variable partitioning, the process size
+        can’t be restricted since the partition size is decided according to the process size.</li>
+    </ol>
+
+    <br>
+
+
+    <div class="p1"><b style="margin: 4vh 0vh 2vh 0vh;">Disadvantages of multiple variable partition system</b>
+    </div>
+
+    <ol style="margin-top:4vh">
+      <li style="padding-bottom: 2vh;"><b>Difficult Implementation: </b>Implementing variable Partitioning is difficult
+        as compared to Fixed Partitioning as it involves allocation of memory during run-time rather than during system
+        configure.</li>
+      <li style="padding-bottom: 2vh;"><b>External Fragmentation: </b>There will be external fragmentation inspite of
+        absence of internal fragmentation.</li>
+    </ol>
+
+    <div class="di" style="margin: 4vh 20vh; padding:2vh; border: 2px solid black; background-color: #F56D91;
+        border-radius: 20px;"><b>Example: </b>Suppose in above example- process P1(2MB) and process P3(1MB) completed
+      their execution. Hence two spaces are left i.e. 2MB and 1MB. Let’s suppose process P5 of size 3MB comes. The empty
+      space in memory cannot be allocated as no spanning is allowed in contiguous allocation. The rule says that process
+      must be contiguously present in main memory to get executed. Hence it results in External Fragmentation.</div>
+
+      <br>
+
+      <p><b>Compaction</b><br>
+      <ul>
+        <li style="padding-top: 1.2vh;">External fragmentation can be resolved through compaction
+        </li>
+        <li style="padding-top: 1.2vh;">Shuffles the memory contents to put all free memory together in one block
+        </li>
+        <li style="padding-top: 1.2vh;">Compaction algorithm is expensive, but so is not making efficient use of memory, especially with a lot of concurrent processes
+        </li>
+      </ul></p>
+  </div>
+
+  
+  </div>
+
+  
+
+  </div>
+
+</body>
+
+</html>

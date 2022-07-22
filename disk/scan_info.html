@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html style="background-color: #DFDFDE;">
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+        .info_part{
+            display: flex;
+            flex-direction: column;
+            background-color: antiquewhite;
+            padding: 20px;
+        }
+		.info_part p,li{
+			font-size: 1.2em;
+			line-height: 2em;
+		}
+		.go_back{
+			border-radius: 0.2em;
+		}
+
+		.go_back a{
+			text-decoration: none;
+			font-size: 1em;
+		}
+		.go_back button:hover{
+			background-color: rgb(112, 118, 118);
+		}
+
+		.info_part img{
+			width:60%;
+		}
+		p{
+			background-color: #F56D91;
+			padding: 10px;
+			border-radius: 10px;
+
+		}
+		h2{
+			text-align: center;
+		}
+		img{
+			align-self: center;
+		}
+		
+
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #7a7aab;">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white;" href="index.html">Home</a>
+            </li>
+		</ul>
+	</div>
+</nav>
+			  
+<div class="jumbotron" style="background-color: #DFDFDE;">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>SCAN</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div class="info_part" style="background-color: #F7F5F2;">
+		<h2><b>Introduction</b></h2>
+		<p>The SCAN disk scheduling algorithm is another type of disk scheduling algorithm. In this algorithm, we move the disk arm into a specific direction (direction can be moved towards large value or the smallest value). Each request is addressed that comes in its path, and when it comes into the end of the disk, then the disk arm will move reverse, and all the requests are addressed that are arriving in its path. Scan disk scheduling algorithm is also called an elevator algorithm because its working is like an elevator.</p>
+		<hr>
+		<h2><b>Advantages</b></h2>
+		<p>
+			
+			1.	In SCAN disk scheduling, there is a low variance of response time.
+		</p>
+		<p>	
+			2.	In this algorithm, throughput is high.			 
+		</p>
+		<p>
+			3.	Response time is average.
+		</p>
+		<p>
+			4.	In SCAN disk scheduling, there is no starvation.
+		</p>
+
+		<hr>
+		<h2><b>Disdvantages</b></h2>
+		<p>
+			
+			1.	SCAN disk scheduling algorithm takes long waiting time for the cylinders, just visited by the head
+		</p>
+		<p>	
+			2.	In SCAN disk scheduling, we have to move the disk head to the end of the disk even when we don’t have any request to service.
+		</p>
+		
+		<hr>
+		<h2><b>Example</b></h2>
+		<p>Consider a disk containing 200 tracks (0-199) and the request queue includes the track number 93, 176, 42, 148, 27, 14, 180, respectively. The current position of read//write head is 55, and direction is towards the larger value. Calculate the total number of cylinders moved by the head using SCAN disk scheduling.</p>
+		<br>
+		<p>As mentioned in the following example, the disk contains 200 tracks. So, we take a track line between 0 to 199.
+			The current position of the read/write head is 55. So, we start at 55, then move the read/write head. When all the requests are addressed, then we calculate a total number of cylinders moved by the head.
+			
+			</p>
+		<br>
+		<img src="./scan.png" alt="scan img">
+		<br>
+		<p>
+			Total Number of cylinders moved by head = (199-55) + (199-14)  = 329
+
+			
+		</p>
+		<br>
+		<button class="go_back" style="width: 80px; margin-left: 500px;"> <a href="index.html"> Go back</a></button>
+
+    
+    </div>
+</body>
+</html>

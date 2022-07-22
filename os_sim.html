@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<title>OS Simulator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="./bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+
+<script>
+    function scrollFunc(){
+    const element = document.getElementById("box");
+  element.scrollIntoView({ 
+  behavior: 'smooth' 
+  });
+  }
+  
+  $(function(){
+    var welcome = $('.welcome');
+    var button = welcome.find('.enter');
+
+    setTimeout(function(){
+      welcome.removeClass('hide');
+    },5000);
+  });
+  
+</script>
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body ,html{
+  height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+a{
+  font-size: 20px;
+}
+.btn1 {
+  background: none;
+  border: none;
+  color: white; 
+  font-size: 30px; 
+  cursor: pointer; 
+}
+
+.btn1:hover {
+  -webkit-transform: scale(1.2);
+  color: white;
+}
+
+.line {
+      position: relative;
+      top: 50%;
+      width: 16em;
+      margin: 0 auto;
+      border-right: 2px solid rgba(255, 255, 255, 0.75);
+      font-size: 180%;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;transform: translateY(-50%);
+}
+
+/*Animation*/
+
+.anim-typewriter {
+      animation: typewriter 4s steps(40) 1s 1 normal both,
+      blinkTextCursor 500ms steps(40) infinite normal;
+}
+
+@keyframes typewriter {
+      from {
+            width: 0;
+      }
+      to {
+            width: 17em;
+      }
+}
+
+@keyframes blinkTextCursor {
+      from {
+            border-right-color: rgba(255, 255, 255, 0.75);
+      }
+      to {
+            border-right-color: transparent;
+      }
+}
+
+.welcome{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #F5EEDC;
+  white-space:nowrap;
+  background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrapper{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+
+.enter{
+  text-align: center;
+  transition: 0.5s;
+}
+
+
+.hide .enter { transform: translate3d(0,-30px,0); opacity: 0; }
+
+h1 {
+	color: #100f10;
+	font-size: 4rem;
+	position: relative;
+	text-transform: uppercase;
+	-webkit-text-stroke: 0.3vw #f7f7fe;
+}
+
+h1::before {
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	color: #D82148;
+	overflow: hidden;
+	position: absolute;
+	content: attr(data-text);
+	border-right: 2px solid #D82148;
+	-webkit-text-stroke: 0vw #3E497A;
+	animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+	0%,
+	10%,
+	100% {
+		width: 0;
+	}
+
+	70%,
+	90% {
+		width: 100%;
+	}
+}
+.names, a{
+  color: #DD4A48;
+}
+/* a{
+  color: ;
+} */
+</style>
+<body>
+
+
+
+
+<div class=" welcome hide">
+  <div class="wrapper">
+    <ul class="text">
+     
+      <h1 data-text="<Operating System Simulator/>" class="custanim">&ltOperating System Simulator/&gt<h1>
+        <h2 style="color: #203239" > Team Members:</h2>
+        <div style="color: #fff" class="row"> 
+          <div style="padding:2rem" class="col">
+            <h3 class="names">201CS101 Aakash Acharya</h3>
+            <h3 class="names">201CS102 Abhiraj Mengade</h3>
+            <h3 class="names">201CS103 Abhishek S</h3>
+            <h3 class="names">201CS104 Adhith</h3>
+            <h3 class="names">201CS105 Ajit Kumar Panigrahi</h3>
+          
+          </div>
+          <div style="padding:2rem" class="col">
+            <h3 class="names">201CS106 Amandeep Grewal</h3>
+            <h3 class="names">201CS107 Amandeep Singh</h3>
+            <h3 class="names">201CS108 Aniketh Narayan Bellala</h3>
+            <h3 class="names">201CS109 Anil Kumar Reddy</h3>
+            <h3 class="names">201CS110 Asim Jawahir</h3>
+          </div>
+          
+          
+        </div>
+    </ul>
+    <div class="enter">
+    <button onclick="scrollFunc()" class="btn1 enter"><i class="fas fa-arrow-down"></i>
+    </button>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="box" style="height: 100%;">
+<div class="jumbotron" style="background-color:#C0D8C0;text-align:center;" >
+  <h2 style="color:#203239; padding-top:60px;">Topics for Simulation</h2>
+  <!-- <p ><em>Click on respecive topics for simulation</em></p> -->
+  <br>
+
+<div class="images" style="padding:60px 0px;">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+
+            <div style="text-align:center;">
+                    <div id="file">
+                      <i class="fab fa-ubuntu"style="font-size: 40px;"></i>
+                        <!-- <i class="fas fa-folder" style="font-size: 40px;"></i> -->
+                    </div>
+                    <a href="systemcalls/index.html" style="text-decoration:none;">System Calls </a>
+                  </div>
+
+                <div style="text-align:center;padding-top: 20px;">
+                  <div id="file">
+                      <i class="fab fa-apple" style="font-size: 40px;"></i>
+                  </div>
+                  <a href="Scheduling/index.html" style="text-decoration:none;">CPU Scheduling</a>
+                </div>
+                
+          </div>
+
+          <div class="col-md-3">
+                <div style="text-align:center">
+                    <div id="file">
+                        <i class="fab fa-centos" style="font-size: 40px;"></i>
+                    </div>
+                    <a href="Deadlock/index.html" style="text-decoration:none;">Deadlocks</a>
+                  </div>
+
+                  <div style="text-align:center;padding-top: 20px;">
+                      <div id="file">
+                          <i class="fab fa-suse" style="font-size: 40px;"></i>
+                      </div>
+                      <a href="page-replacement/pegerephome.html" style="text-decoration:none;">Page Replacement Algorithms</a>
+                    </div>
+          </div>
+
+          <div class="col-md-3">
+              
+                <div style="text-align:center">
+                    <div id="file">
+                        <i class="fab fa-redhat" style="font-size: 40px;"></i>
+                    </div>
+                    <a href="Syncronization/index.html" style="text-decoration:none;">Process Synchronization</a>
+                  </div>
+
+                  <div style="text-align:center;padding-top: 20px;">
+                      <div id="file">
+                          <i class="fab fa-fedora" style="font-size: 40px;"></i>
+                      </div>
+                      <a href="memory/index.html" style="text-decoration:none;">Memory Management</a>
+                    </div>
+          </div>
+
+
+          <div class="col-md-3">
+                <div style="text-align:center">
+                    <div id="file">
+                        <i class="fab fa-windows" style="font-size: 40px;"></i>
+                    </div>
+                    <a href="disk/index.html" style="text-decoration:none;">Disk Scheduling</a>
+                  </div>
+
+                  <div style="text-align:center;padding-top: 20px;">
+                      <div id="file">
+                          <i class="fas fa-folder" style="font-size: 40px;"></i>
+                      </div>
+                      <a href="file-allocation/Index page/index._page.html" style="text-decoration:none;">File Allocation</a>
+                    </div>
+          </div>
+
+          <div class="col-md-3">
+            <div style="text-align:center">
+                <div id="file">
+                    <i class="fas fa-file" style="font-size: 40px;"></i>
+                </div>
+                <a href="paging/index.html" style="text-decoration:none;">Paging</a>
+              </div>
+
+             
+      </div>
+        </div>
+
+      
+  </div>
+</div>
+
+</div>
+
+</div>
+
+</html>

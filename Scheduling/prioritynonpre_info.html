@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="./scheduling.css">
+
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white; padding: 0rem; font-size: 1.2rem; margin:0rem 0.6rem;" href="index.html">Home</a>
+            </li>
+		</ul>
+	</div>
+</nav>
+			  
+<div class="jumbotron">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>Priority Scheduling (Non Pre-emptive)</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div class="info_part">
+		<h2><b>Introduction</b></h2>
+		<p>In this type of scheduling method, the CPU has been allocated to a specific process. The process that keeps the CPU busy, will release the CPU either by switching context or terminating. It is the only method that can be used for various hardware platforms. That's because it doesn't need special hardware (for example, a timer) like preemptive scheduling.</p>
+		<hr>
+		<h2><b>Example</b></h2>
+		<p>In the Example, there are 7 processes P1, P2, P3, P4, P5, P6 and P7. Their priorities, Arrival Time and burst time are given in the table.</p>
+		<img src="./prnp_ex.png" alt="table">
+		<br>
+		<div class="steps">
+		<p><b>Step 0)</b> The Process P1 arrives at time 0 with the burst time of 3 units and the priority number 2.<br>Since No other process has arrived till now hence the OS will schedule it immediately.</p>
+		<p><b>Step 1)</b> Meanwhile the execution of P1, two more Processes P2 and P3 are arrived. Since the priority <br> of P3 is 3 hence the CPU will execute P3 over P2.</p>
+		<p><b>Step 2)</b> Meanwhile the execution of P3, All the processes get available in the ready queue. The Process <br>with the lowest priority number will be given the priority. Since P6  has priority number assigned as 4<br>hence it will be executed just after P3.</p>
+		<p><b>Step 3)</b> After P6, P4 has the least priority number among the available processes, it will get <br> executed for the whole burst time.</p>
+		<p><b>Step 4)</b> Since all the jobs are available in the ready queue hence All the Jobs will get executed <br>  according to their priorities. If two jobs have similar priority number assigned to them,<br>  the one with the least arrival time will be executed.</p>
+
+		</div>
+		<br>
+		<img src="./prnp_gt.png" alt="gt">
+		<br>
+		<p>The Turnaround time and the waiting time are calculated by using the following formula.</p>
+		<strong>Turn Around Time = Completion Time - Arrival Time </strong>
+    	<strong> Waiting Time = Turnaround time - Burst Time </strong>
+		<br>
+		<img src="./prnp_tat.png" alt="tat">
+		<br>
+		<img src="./prnp_cal.png" alt="cal" style="width:32%;">
+		<br>
+		<br>
+		<h2><b>Advantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>It provides a low scheduling overhead.</li>
+                <li>It is a very simple method.</li>
+                <li>It uses less computational resources.</li>
+                <li>It offers high throughput.</li>
+			</ol>
+		</div>
+		<br>
+		<h2><b>Disadvantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>It has a poor response time for the process.</li>
+                <li>A machine can freeze up due to bugs.</li>
+			</ol>
+		</div>
+		<br>
+		<button class="go_back"> <a href="index.html"> Go back</a></button>
+
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>MFT</title>
+</head>
+
+<body style="background-color: #F7F5F2;">
+
+  <div class="na" style="background-color: #8D8DAA ; padding:2vh; ">
+    <h1 align="center" style="background-color: #8D8DAA;  font-size: 6vh; color: black !important;">Multiprogramming
+      with a Fixed Number of Tasks (MFT)</h1>
+    <h1 align="center" style="color: black; font-size: 6vh; color: #8D8DAA;">First Fit - Simulation</h1>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #DFDFDE!important;">
+    <a class="navbar-brand" href="./index.html" style="font-size: 3vh; opacity: 2;">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="./Best-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Best Fit
+          Theory <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="./First-fit.html" style="font-size: 3vh;  padding-left: 4vh;">First Fit Theory <span
+            class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link active" href="./Worst-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Worst Fit Theory <span
+            class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="./Next-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Next Fit Theory <span
+                class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="./Next-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Next Fit
+                  Theory <span class="sr-only">(current)</span></a>
+        <!-- <a class="nav-item nav-link" href="#" style="font-size: 3vh; padding-left: 4vh;">First Fit (next)</a> -->
+        <!-- <a class="nav-item nav-link" href="#" style="font-size: 3vh; padding-left: 4vh;">Worst Fit(next)</a> -->
+        <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+      </div>
+    </div>
+  </nav>
+
+  <div class="he" style="padding: 4vh; ">
+    <h1><b>Fixed (or static) Partitioning in Operating System</b></h1>
+  </div>
+
+  <div class="pa" style="padding: 4vh; font-size: 4vh;">
+    <p>In this type of contiguous memory allocation technique, <b>each process is allotted a fixed size continuous block in the main memory</b> . That means there will be continuous blocks of fixed size into which the complete memory will be divided, and each time a process comes in, it will be allotted one of the free blocks. Because irrespective of the size of the process, each is allotted a block of the same size memory space.</p>
+    <br>
+
+    <img src="p9.png" alt="" style="margin:2vh 10vh 5vh 40vh">
+    <p>In the diagram above, we have 3 processes in the input queue that have to be allotted space in the memory. As we are following the fixed size partition technique, the memory has fixed-sized blocks. The first process, which is of size 3MB is also allotted a 5MB block, and the second process, which is of size 1MB, is also allotted a 5MB block, and the 4MB process is also allotted a 5MB block. So, the process size doesn't matter. Each is allotted the same fixed-size memory block.
+    </p>
+    <br>
+
+    <div class="di" style="margin: 4vh 20vh; padding:2vh; border: 2px solid black; background-color: #F56D91;
+        border-radius: 20px; color: white;"> <b>NOTE: </b> The number of processes that can stay in the memory at once is called the degree of multiprogramming. Hence, the degree of multiprogramming of the system is decided by the number of blocks created in the memory, i.e if number of partitons is n then degree of multi-programming cannot be greater than n.</div>
+
+    <!-- <img src="p1.png" alt="" width="50%"
+      style="display: block; margin-right: auto; margin-left: auto; width: 50%; border: 2px solid black;">
+
+    <br>
+
+    <p>At some point, none of the processes in the memory is ready. The operating system therefore swaps out process B
+      which provides sufficient room to load a new process E. As process E is smaller than process B, another small hole
+      is created.</p>
+
+    <br> -->
+
+    
+
+    <!-- <b>Methods of Operation in Multiple Variable Partition Allocation</b>
+    <br>
+    <br>
+    <ul>
+      <li style="padding-bottom: 2vh;">In variable partition, a set of holes, of various sizes, is scattered throughout
+        memory at any given time.</li>
+      <li style="padding-bottom: 2vh;">When a process arrives and needs memory, the OS searches for a hole that is large
+        enough for this process</li>
+      <li style="padding-bottom: 2vh;">If the hole is too large, it is divided into two parts. One part is allocated to
+        the arriving process and the other is returned to the set of holes.</li>
+      <li style="padding-bottom: 2vh;">For each partition allocated, the information like base address of partition,
+        size and its status (ALLOCATED) is added to partition description table (PDT).</li>
+
+      
+
+      <li style="padding-bottom: 2vh;">When a process terminates, it releases its block of memory. This block of memory
+        is placed back in the set of holes.</li>
+      <li style="padding-bottom: 2vh;">If the new hole is adjacent to other holes, these adjacent holes are merged to
+        form one larger hole.</li>
+    </ul> -->
+
+    <br>
+
+    <div class="p1"><b style="margin-bottom: 2vh;">Advantage of multiple fixed partition system</b>
+    </div>
+
+    <ol style="margin-top:4vh">
+      <li style="padding-bottom: 2vh;">Because all of the blocks are the same size, this scheme is simple to implement. All we have to do now is divide the memory into fixed blocks and assign processes to them.</li>
+      <li style="padding-bottom: 2vh;">It is easy to keep track of how many blocks of memory are left, which in turn decides how many more processes can be given space in the memory.
+      </li>
+      <li style="padding-bottom: 2vh;">As at a time multiple processes can be kept in the memory, this scheme can be implemented in a system that needs multiprogramming.</li>
+    </ol>
+
+    <br>
+
+
+    <div class="p1"><b style="margin: 4vh 0vh 2vh 0vh;">Disadvantages of multiple fixed partition system</b>
+    </div>
+
+    <ol style="margin-top:4vh">
+      <li style="padding-bottom: 2vh;">As the size of the blocks is fixed, we will not be able to allot space to a process that has a greater size than the block.</li>
+      <li style="padding-bottom: 2vh;">The size of the blocks decides the degree of multiprogramming, and only that many processes can remain in the memory at once as the number of blocks.</li>
+      <li style="padding-bottom: 2vh;">If the size of the block is greater than the size of the process, we have no other choice but to assign the process to this block, but this will lead to much empty space left behind in the block. This empty space could've been used to accommodate a different process. This is called internal fragmentation. Hence, this technique may lead to space wastage.</li>
+    </ol>
+
+    <!-- <div class="di" style="margin: 4vh 20vh; padding:2vh; border: 2px solid black; background-color: #F56D91;
+        border-radius: 20px;"><b>Example: </b>Suppose in above example- process P1(2MB) and process P3(1MB) completed
+      their execution. Hence two spaces are left i.e. 2MB and 1MB. Let’s suppose process P5 of size 3MB comes. The empty
+      space in memory cannot be allocated as no spanning is allowed in contiguous allocation. The rule says that process
+      must be contiguously present in main memory to get executed. Hence it results in External Fragmentation.</div> -->
+
+      <br>
+
+      <img src="p11.png" alt="" style="margin:2vh 10vh 5vh 40vh">
+
+      <!-- <p><b>Compaction</b><br>
+      <ul>
+        <li style="padding-top: 1.2vh;">External fragmentation can be resolved through compaction
+        </li>
+        <li style="padding-top: 1.2vh;">Shuffles the memory contents to put all free memory together in one block
+        </li>
+        <li style="padding-top: 1.2vh;">Compaction algorithm is expensive, but so is not making efficient use of memory, especially with a lot of concurrent processes
+        </li>
+      </ul></p> -->
+  </div>
+
+  
+  </div>
+
+  
+
+  </div>
+
+</body>
+
+</html>

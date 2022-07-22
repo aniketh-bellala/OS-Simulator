@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>MFT</title>
+</head>
+
+<body style="background-color: #F7F5F2;">
+
+    <div class="na" style="background-color: #8D8DAA ; padding:2vh; ">
+        <h1 align="center" style="background-color: #8D8DAA;  font-size: 6vh; color: black !important;">Best Fit Allocation</h1>
+        <h1 align="center" style="color: black; font-size: 6vh; color: #8D8DAA;">First Fit - Simulation</h1>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #DFDFDE!important;">
+        <a class="navbar-brand" href="./index.html" style="font-size: 3vh; opacity: 2;">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="./MVT.html"
+                    style="font-size: 3vh;  padding-left: 4vh;">MVT
+                    <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="./MFT.html" style="font-size: 3vh;  padding-left: 4vh;">MFT
+                        <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="./Best-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Best Fit
+                        Theory <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="./First-fit.html" style="font-size: 3vh;  padding-left: 4vh;">First Fit
+                    Theory <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="./Worst-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Worst Fit
+                    Theory <span class="sr-only">(current)</span></a>
+                <!-- <a class="nav-item nav-link" href="#" style="font-size: 3vh; padding-left: 4vh;">First Fit (next)</a> -->
+                <!-- <a class="nav-item nav-link" href="#" style="font-size: 3vh; padding-left: 4vh;">Worst Fit(next)</a> -->
+                <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="he" style="padding: 4vh; ">
+        <h1><b>Best Fit</b></h1>
+    </div>
+
+    <div class="pa" style="padding: 4vh 4vh 2vh 4vh; font-size: 4vh;">
+        <p>In the case of the best fit memory allocation scheme, the operating system searches for the empty memory
+            block. When the operating system finds the memory block with minimum wastage of memory, it is allocated to
+            the process.</p>
+        <br>
+
+        <div class="box" style="display: grid;grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr 1fr;">
+            <div class="box1"
+                style="grid-column: 1/2; grid-row: 1/4; border: 2px solid black; text-align: center; background-color: #F56D91; border-radius: 20px;">
+                <b style="padding: 4vh !important;
+            text-align: center; ">How does it work?</b><br>
+                <p style="padding-top: 4vh;">In Best fit memory allocation scheme, the operating system searches that
+                    can –</p>
+                <ul>
+                    <li style="padding-bottom: 1.5vh; text-align: left !important;">Accommodate the process </li>
+                    <li style="padding-bottom: 1.5vh; text-align: left !important;">Also, leaves the minimum memory
+                        wastage</li>
+                </ul>
+                <br>
+
+                <p style="text-align: left !important; padding-left: 2vh;"><b>Example: </b></p>
+                <p>If you see the image right you will see that the process size is 40.</p>
+                <br>
+                <p>While blocks 1, 2 and 4 can accommodate the process. <b>Block 2 is chosen as it leaves the lowest
+                        memory wastage</b> </p>
+            </div>
+
+            <div class="box2" style="grid-column: 2/2; grid-row: 1/4;">
+                <img src="p2.png" alt="" style=" width: 80%; margin: 4vh 2vh 2vh 10vh; border: 2px solid black;">
+            </div>
+        </div>
+
+        <div class="p1"><b style="margin-bottom: 2vh;">Advantages of Best fit Allocation</b>
+        </div>
+
+        <ol style="margin-top:4vh">
+            <li style="padding-bottom: 2vh;"><b>Efficient Memory Usage:  </b>It tries to reduce the wastage of space because it allocated the smallest appropriate holes for requesting process.</li>
+        </ol>
+
+        <br>
+
+
+        <div class="p1"><b style="margin: 4vh 0vh 2vh 0vh;">Disadvantages of Best fit Allocation</b>
+        </div>
+
+        <ol style="margin-top:4vh">
+            <li style="padding-bottom: 2vh;">It requires <b>O(n)</b> time to search the entire list and find the
+                smallest one.</li>
+            <li style="padding-bottom: 2vh;">As if it chooses the smallest possible space, so the very small size of
+                hole is free and not fit farther for any process.</li>
+        </ol>
+
+        <div class="di" style="margin: 4vh 20vh; padding:2vh; border: 2px solid black; background-color: #F56D91;
+        border-radius: 20px;"><b>Example: </b>In the above allocation a process of size 40 allocated to block 2
+            creating an extra space of 10 (50-40), in which no other process can be allocated.</div>
+
+        <br>
+
+        <div class="s"><b>Simulations</b><br>
+            <br>
+
+            <div class="bo" style="display: flex;">
+            <div class="card" style="width: 40%; display: flex; margin: 4vh;">
+                <img class="card-img-top" src="p4.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">MVT-Best fit Simulation</h5>
+                    <p class="card-text">Try out best fit allocation in variable task with visualising the process
+                        allocation in main memory</p>
+                    <a href="./bf2.html" class="btn btn-success">Go to simulator</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 40%; display: flex; margin: 4vh;" >
+                <img class="card-img-top" src="p3.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">MFT-Best fit Simulation</h5>
+                    <p class="card-text">Try out best fit allocation in fixed task with visualising the process
+                        allocation in main memory</p>
+                    <a href="./bf1.html" class="btn btn-success">Go to simulator</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>

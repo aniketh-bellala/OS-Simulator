@@ -1,0 +1,65 @@
+.navbar {
+  background-color: #8d8daa;
+  /* background-color: #5f5f9fd1; */
+}
+
+.info_card {
+  background-color: #f56d91cb;
+  color: white;
+  text-shadow: 0.1rem 0.1rem 0.4rem black;
+}
+
+.card-subtitle h6 {
+  color: black;
+}
+
+.info_card a {
+  color: whitesmoke;
+  text-shadow: 0.1rem 0.1rem 0.15rem black;
+}
+
+.block {
+  position: relative;
+  display: none;
+  border-right: 1px solid black;
+  float: left;
+  text-align: center;
+  background-color: rgba(218, 152, 11, 0.44);
+  height: 48px;
+}
+
+.info_part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f56d91cb;
+  color: white;
+  border-radius: 0.4rem;
+  padding: 20px;
+}
+
+.info_part p,
+li {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+.go_back {
+  border-radius: 0.2em;
+}
+
+.go_back a {
+  text-decoration: none;
+  font-size: 1em;
+}
+.go_back button:hover {
+  background-color: rgb(112, 118, 118);
+}
+
+.info_part img {
+  width: 60%;
+}
+
+.thead_custom
+{
+  background-color: #f56d91cb;
+}

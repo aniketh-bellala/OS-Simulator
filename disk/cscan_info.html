@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html style="background-color: #DFDFDE;">
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+        .info_part{
+            display: flex;
+            flex-direction: column;
+            background-color: antiquewhite;
+            padding: 20px;
+        }
+		.info_part p,li{
+			font-size: 1.2em;
+			line-height: 2em;
+		}
+		.go_back{
+			border-radius: 0.2em;
+		}
+
+		.go_back a{
+			text-decoration: none;
+			font-size: 1em;
+		}
+		.go_back button:hover{
+			background-color: rgb(112, 118, 118);
+		}
+
+		.info_part img{
+			width:60%;
+		}
+		p{
+			background-color: #F56D91;
+			padding: 10px;
+			border-radius: 10px;
+
+		}
+		h2{
+			text-align: center;
+		}
+		img{
+			align-self: center;
+		}
+		
+		
+
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #7a7aab;">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white;" href="index.html">Home</a>
+            </li>
+		</ul>
+	</div>
+</nav>
+			  
+<div class="jumbotron" style="background-color: #DFDFDE;">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>C-SCAN</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div class="info_part" style="background-color: #F7F5F2;">
+		<h2><b>Introduction</b></h2>
+		<p>C-SCAN stands for Circular-SCAN.  C-SCAN is an enhanced version of SCAN disk scheduling. In the C-SCAN disk scheduling algorithm, the disk head starts to move towards one of the ends and service the requests that come in its path and reach the end. After doing this, the direction of the head is reversed. The head reaches the other end without satisfying any request and then it goes on servicing the requests which are remaining.</p>
+		<hr>
+		<h2><b>Advantages</b></h2>
+		<p>
+			
+			1.	C-SCAN offers better uniform waiting time.
+		</p>
+		<p>	
+			2.	It offers a better response time.
+		</p>
+		
+
+		<hr>
+		<h2><b>Disdvantages</b></h2>
+		<p>
+			
+			1.	In C-SCAN disk scheduling, there are more seek movements as compared to SCAN disk scheduling.	
+		</p>
+		<p>	
+			2.	In C-SCAN disk scheduling, we have to move the disk head to the end of the disk even when we don’t have any request to service.
+		</p>
+		
+		<hr>
+		<h2><b>Example</b></h2>
+		<p>Consider, a disk contains 200 tracks (0-199) and the request queue contains track number 82, 170, 43, 140, 24, 16,190, respectively.  The current position of R/W head is 50, and the direction is towards the larger value. Calculate the total number of cylinders moved by head using C-SCAN disk scheduling.</p>
+		<br>
+		<p>
+
+			As mentioned in the following example, the disk contains 200 tracks. So, we take a track line between 0 to 199. The current position of the read/write head is 50. So we start at 50, then move the read/write head based on the direction. Here, we move towards the larger value as given in the question. When all the requests are addressed, then we calculate a total number of cylinders moved by the head.
+
+		</p>
+		<br>
+		<img src="./cscan.png" alt="cscan img">
+		<br>
+		<p>
+			Total Number of cylinders moved by head = (199-50) + (199-0) + (43-0) = 149+199+43 = 391
+		</p>
+		<br>
+		<button class="go_back" style="width: 80px; margin-left: 500px;"> <a href="index.html"> Go back</a></button>
+
+    
+    </div>
+</body>
+</html>

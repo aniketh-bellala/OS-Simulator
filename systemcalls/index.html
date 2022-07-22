@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" /> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			
+			font-size: 1.2em;
+
+		}
+.contain{
+	display: flex;
+	flex-direction: row;
+}
+</style>
+
+
+<body>
+	<nav class="navbar navbar-expand-custom navbar-mainbg">
+		<a class="navbar-brand navbar-logo" href="../os_sim.html">OS Sim</a>
+	<button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<i class="fas fa-bars text-white"></i>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto">
+			<div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+			<li class="nav-item active">
+				<a class="nav-link" href="../systemcalls/index.html"><i class="fas fa-tachometer-alt"></i>CPU Scheduling</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../Scheduling/index.html"><i class="fas fa-tachometer-alt"></i>CPU Scheduling</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../Deadlock/index.html"><i class="far fa-address-book"></i>Deadlocks</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../Syncronization/index.html"><i class="far fa-clone"></i>Process Synchronization</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../disk/disk_scheduling.html"><i class="far fa-calendar-alt"></i>Disk Scheduling</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../Server-Client-Comm/index.html"><i class="far fa-chart-bar"></i>Socket Programming</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../page-replacement/pegerephome.html"><i class="far fa-copy"></i>Page Replacment Algorithm</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../memory/index.html"><i class="far fa-copy"></i>MFT</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="../file-allocation/Index%20page/index._page.html"><i class="far fa-copy"></i>File Allocation</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+			  
+<div class="mcontainer">
+	<div class="displat-3" style="margin:1rem;" >
+		<h1>System Calls</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div>
+		
+	<div class="contain">
+
+ 	<div class="card" style="width: 18rem; margin:1rem;">
+  		<img class="card-img-top" src="..." alt="">
+  		<div class="card-body">
+    	<h5 class="card-title">open() </h5>
+    	<p class="card-text">open : This call opens or creates a file if not present.
+		</p>
+  		</div>
+	</div>
+
+	<div class="card" style="width: 18rem;margin:1rem;">
+		<img class="card-img-top" src="..." alt="">
+		<div class="card-body">
+	  <h5 class="card-title">creat() </h5>
+	  <p class="card-text">creat : it creates a new file or rewrites an existing one
+	  </p>
+	</div>
+  	</div>
+
+	  <div class="card" style="width: 18rem;margin:1rem;">
+		<img class="card-img-top" src="..." alt="">
+		<div class="card-body">
+	  <h5 class="card-title">close() </h5>
+	  <p class="card-text">close : It closes an open file, returns -1 in case of error.
+	  </p>
+	</div>
+  	</div>
+
+	  <div class="card" style="width: 18rem;margin:1rem;">
+		<img class="card-img-top" src="..." alt="">
+		<div class="card-body">
+	  <h5 class="card-title">read() </h5>
+	  <p class="card-text">read: This is used to read a certain number of bytes starting from current position.
+	  </p>
+	</div>
+  	</div>
+
+	  <div class="card" style="width: 18rem;margin:1rem;">
+		<img class="card-img-top" src="..." alt="">
+		<div class="card-body">
+	  <h5 class="card-title">write() </h5>
+	  <p class="card-text">write: This is used to write a certain number of bytes starting from current position.
+
+
+	  </p>
+	</div>
+  	</div>
+	  
+	  
+	</div>
+
+
+			
+	<div class="contain">
+
+		<div class="card" style="width: 18rem; margin:1rem;">
+			 <img class="card-img-top" src="..." alt="">
+			 <div class="card-body">
+		   <h5 class="card-title">lseek() </h5>
+		   <p class="card-text">Lseek: This call is used to position a pointer in an absolute or relative way.
+
+		   </p>
+			 </div>
+	   </div>
+   
+	   <div class="card" style="width: 18rem;margin:1rem;">
+		   <img class="card-img-top" src="..." alt="">
+		   <div class="card-body">
+		 <h5 class="card-title">link() </h5>
+		 <p class="card-text">Link: This call is used to link one file to another directory. I.e it changes the path of the file.
+
+		 </p>
+	   </div>
+		 </div>
+   
+		 <div class="card" style="width: 18rem;margin:1rem;">
+		   <img class="card-img-top" src="..." alt="">
+		   <div class="card-body">
+		 <h5 class="card-title">unlink() </h5>
+		 <p class="card-text">Unlink: This call unlinks the link that was created.
+
+		 </p>
+	   </div>
+		 </div>
+   
+		 <div class="card" style="width: 18rem;margin:1rem;">
+		   <img class="card-img-top" src="..." alt="">
+		   <div class="card-body">
+		 <h5 class="card-title">access() </h5>
+		 <p class="card-text">Access: This call checks whether the calling process can access the file pathname.
+		 </p>
+	   </div>
+		 </div>
+   
+		 <div class="card" style="width: 18rem;margin:1rem;">
+		   <img class="card-img-top" src="..." alt="">
+		   <div class="card-body">
+		 <h5 class="card-title">chmod() </h5>
+		 <p class="card-text">Chmod: This system call modifies the access rights of a certain file.
+		</p>
+	   </div>
+		 </div>
+		 
+		 
+	   </div>
+</div>
+</body>
+</html>

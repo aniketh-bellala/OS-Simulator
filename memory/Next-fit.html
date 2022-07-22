@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>MFT</title>
+</head>
+
+<body style="background-color: #F7F5F2;">
+
+    <div class="na" style="background-color: #8D8DAA ; padding:2vh; ">
+        <h1 align="center" style="background-color: #8D8DAA;  font-size: 6vh; color: black !important;">Next Fit Allocation</h1>
+        <h1 align="center" style="color: black; font-size: 6vh; color: #8D8DAA;">First Fit - Simulation</h1>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #DFDFDE!important;">
+        <a class="navbar-brand" href="./index.html" style="font-size: 3vh; opacity: 2;">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="./MVT.html"
+                    style="font-size: 3vh;  padding-left: 4vh;">MVT
+                    <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="./MFT.html" style="font-size: 3vh;  padding-left: 4vh;">MFT
+                        <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="./Best-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Best Fit
+                    Theory <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="./First-fit.html" style="font-size: 3vh;  padding-left: 4vh;">First Fit
+                        Theory <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="./Worst-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Worst Fit
+                    Theory <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="./Next-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Next Fit
+                        Theory <span class="sr-only">(current)</span></a>
+                <!-- <a class="nav-item nav-link" href="#" style="font-size: 3vh; padding-left: 4vh;">First Fit (next)</a> -->
+                <!-- <a class="nav-item nav-link" href="#" style="font-size: 3vh; padding-left: 4vh;">Worst Fit(next)</a> -->
+                <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="he" style="padding: 4vh; ">
+        <h1><b>Next Fit</b></h1>
+    </div>
+
+    <div class="pa" style="padding: 4vh 4vh 2vh 4vh; font-size: 4vh;">
+        <p>Next fit is another version of First Fit in which memory is searched for empty spaces similar to the first fit memory allocation scheme. Unlike first-fit memory allocation, the only difference between the two is, in the case of next fit, if the search is interrupted in between, the new search is carried out from the last location.
+            <br>
+        <br>
+        Next fit can also be said as the modified version of the first fit as it starts searching for a free memory as following the first-fit memory allocation scheme. This memory allocation scheme uses a moving pointer which moves along the empty memory slots to search memory for the next fit. The next fit memory allocation method avoids memory allocation always from the beginning of the memory space. The operating system uses a memory allocation algorithm, also known as the scheduling algorithm for this purpose. </p>
+        <br>
+
+        <!-- <div class="box" style="display: grid;grid-template-columns: 1fr 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr 1fr;">
+            <div class="box1"
+                style="grid-column: 2/4; grid-row: 1/4; border: 2px solid black; text-align: center; background-color: #F56D91; border-radius: 20px;">
+                <b style="padding: 4vh !important;
+            text-align: center; ">How does it work?</b><br>
+                <p style="padding-top: 4vh;">In First fit memory allocation scheme, the operating system searches that
+                    can –</p>
+                <ul>
+                    <li style="padding-bottom: 1.5vh; text-align: left !important;">Accommodate the process </li>
+                    <li style="padding-bottom: 1.5vh; text-align: left !important;">Nearest from starting/top of main memory</li>
+                </ul>
+                <br>
+
+                <p style="text-align: left !important; padding-left: 2vh;"><b>Example: </b></p>
+                <p>Given 5 partiton of size 5KB, 3KB, 1KB, 4KB and 1 KB respectivly, if a new process A of 1KB arrives to main memory it is alloted to partition 1 of size 5.</p>
+                <br>
+
+                
+            </div>
+        </div> -->
+
+
+        
+
+        <p><b>Algorithm for memory allocation using Next Fit</b>
+        <br>
+        <ul>
+            <li style="padding: 1.2vh;"><b>Step 1: </b> Enter the number of memory blocks.</li>
+            <li style="padding: 1.2vh;"> <b>Step 2: </b>  Enter the size of each memory block.</li>
+            <li style="padding: 1.2vh;"><b>Step 3: </b> Enter the number of processes with their sizes.
+            </li>
+            <li style="padding: 1.2vh;"><b>Step 4: </b> Start by selecting each process to check if it can be assigned to the current memory block.</li>
+            <li style="padding: 1.2vh;"><b>Step 5: </b>If the condition in step 4 is true, then allocate the process with the required memory and check for the next process from the memory block where the searching was halted, not from the starting.</li>
+            <li style="padding: 1.2vh;"><b>Step 6: </b> If the current memory size is smaller, then continue to check the next blocks.
+            </li>
+            <li style="padding: 1.2vh;"><b>Step 7: </b> Stop
+            </li>
+        </ul>
+        <br>
+    </p>
+
+        <div class="p1"><b style="margin-bottom: 2vh;">Advantages of First fit Allocation</b>
+        </div>
+
+        <ol style="margin-top:4vh">
+            <li style="padding-bottom: 2vh;">It takes lesser time compare to the other algorithms.</li>
+            <li style="padding-bottom: 2vh;">It produces bigger holes that can be used to load other processes later on.</li>
+            <li style="padding-bottom: 2vh;">It is easiest to implement.</li>
+        </ol>
+
+        <br>
+
+
+        <div class="p1"><b style="margin: 4vh 0vh 2vh 0vh;">Disadvantages of First fit Allocation</b>
+        </div>
+
+        <ol style="margin-top:4vh">
+            <li style="padding-bottom: 2vh;">It wastes a lot of memory. The processor ignores if the size of partition allocated to the job is very large as compared to the size of job or not. It just allocates the memory. As a result, a lot of memory is wasted and many jobs may not get space in the memory, and would have to wait for another job to complete.</li>
+        </ol>
+
+        <!-- <div class="di" style="margin: 4vh 20vh; padding:2vh; border: 2px solid black; background-color: #F56D91;
+        border-radius: 20px;"><b>Example: </b>In the above allocation a process of size 40 allocated to block 2
+            creating an extra space of 10 (50-40), in which no other process can be allocated.</div>
+
+        <br> -->
+
+        <br>
+
+        <div class="s"><b>Simulations</b><br>
+            <br>
+
+            <div class="bo" style="display: flex;">
+            <div class="card" style="width: 40%; display: flex; margin: 4vh;">
+                <img class="card-img-top" src="p15.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">MVT-First fit Simulation</h5>
+                    <p class="card-text">Try out first fit allocation in variable task with visualising the process
+                        allocation in main memory</p>
+                    <a href="./nf1.html" class="btn btn-success">Go to simulator</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>

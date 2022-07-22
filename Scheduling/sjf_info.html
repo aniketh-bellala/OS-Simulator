@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="./scheduling.css">
+
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+        
+
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white; padding: 0rem; font-size: 1.2rem; margin:0rem 0.6rem;" href="index.html">Home</a>
+            </li>
+		</ul>
+	</div>
+</nav>
+			  
+<div class="jumbotron">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>Shortest Job First</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div class="info_part">
+		<h2><b>Introduction</b></h2>
+		<p>Shortest Job First (SJF) is an algorithm in which the process having the smallest execution time is chosen for the next execution. This scheduling method is non-preemptive - once the CPU cycle is allocated to process, the process holds it till it reaches a waiting state or terminated.</p>
+		<hr>
+		<h2><b>Example</b></h2>
+		<p>In the following example, there are five jobs named as P1, P2, P3, P4 and P5. Their arrival time and burst time are given in the table below.</p>
+		<img src="./sjf_ex.png" alt="table">
+		<br>
+		<div class="steps">
+		<p><b>Step 0)</b> At time=0, P4 arrives and starts execution.</p>
+		<p><b>Step 1)</b> At time=1, Process P3 arrives. But, P4 still needs 2 execution units to complete. It will continue execution.</p>
+		<p><b>Step 2)</b> At time=2, process P1 arrives and is added to the waiting queue. P4 will continue execution.</p>
+		<p><b>Step 3)</b> At time=3, process P4 will finish its execution. The burst time of P3 and P1 is compared. Process P1 is<br> executed because its burst time is less compared to P3.</p>
+		<p><b>Step 4)</b> At time=4, process P5 arrives and is added to the waiting queue. P1 will continue execution.</p>
+		<p><b>Step 5)</b> At time=5, process P2 arrives and is added to the waiting queue. P1 will continue execution.</p>
+		<p><b>Step 6)</b> At time=9, process P1 will finish its execution. The burst time of P3, P5, and P2 is compared. Process P2<br> is executed because its burst time is the lowest.</p>
+		<p><b>Step 7)</b> At time=10, P2 is executing and P3 and P5 are in the waiting queue.</p>
+		<p><b>Step 8)</b> At time=11, process P2 will finish its execution. The burst time of P3 and P5 is compared. Process P5<br> is executed because its burst time is lower.</p>
+		<p><b>Step 9)</b> At time=15, process P5 will finish its execution.</p>
+		<p><b>Step 10)</b> At time=23, process P3 will finish its execution.</p>
+		<p><b>Step 11)</b> Let's calculate the average waiting time for above example.</p>
+		</div>
+		<br>
+		<img src="./sjf_gt.png" alt="gt">
+		<br>
+		<p>The Turnaround time and the waiting time are calculated by using the following formula.</p>
+		<strong>Turn Around Time = Completion Time - Arrival Time </strong>
+    	<strong> Waiting Time = Turnaround time - Burst Time </strong>
+		<br>
+		<img src="./sjf_tat.png" alt="tat">
+		<br>
+		<img src="./sjf_cal.png" alt="cal" style="width:32%;">
+		<br>
+		<br>
+		<h2><b>Advantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>Maximum throughput</li>
+                <li>Minimum average waiting and turnaround time</li>
+			</ol>
+		</div>
+		<br>
+		<h2><b>Disadvantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>May suffer with the problem of starvation</li>
+				<li>It is not implementable because the exact Burst <br> time for a process can't be known in advance.</li>
+			</ol>
+		</div>
+		<br>
+		<button class="go_back"> <a href="index.html"> Go back</a></button>
+
+    
+    </div>
+</body>
+</html>

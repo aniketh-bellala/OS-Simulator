@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <title>MFT-Next fit</title>
+</head>
+
+<body style="background-color: #DFDFDE;">
+
+
+<div class="na" style="background-color: #8D8DAA ; padding:2vh; ">
+
+    <h1 align="center" style="background-color: #8D8DAA;  font-size: 6vh; color: black !important;">Multiprogramming with a Fixed Number of Tasks (MFT)</h1>
+    <h1 align="center" style="color: #dddddd; font-size: 6vh; color: black;">Next Fit - Simulation</h1>
+
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #DFDFDE!important;">
+        <a class="navbar-brand" href="./index.html" style="font-size: 3vh; opacity: 2;">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="./MVT.html"
+                    style="font-size: 3vh;  padding-left: 4vh;">MVT
+                    <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="./MFT.html" style="font-size: 3vh;  padding-left: 4vh;">MFT
+                        <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="./Best-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Best Fit
+                    Theory <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="./First-fit.html" style="font-size: 3vh;  padding-left: 4vh;">First Fit
+                    Theory <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active" href="./Worst-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Worst Fit
+                        Theory <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link active" href="./Next-fit.html" style="font-size: 3vh;  padding-left: 4vh;">Next Fit
+                            Theory <span class="sr-only">(current)</span></a>
+                <!-- <a class="nav-item nav-link" href="#" style="font-size: 3vh; padding-left: 4vh;">First Fit (next)</a> -->
+                <!-- <a class="nav-item nav-link" href="#" style="font-size: 3vh; padding-left: 4vh;">Worst Fit(next)</a> -->
+                <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="con" style="background-color: #DFDFDE;">
+
+    <div class="row" style="padding: 10vh 0vh; font-size: 3vh; background-color: #DFDFDE;">
+        <div class="co" style="margin: auto; background-color: #DFDFDE;">
+            <div class="m" style="padding: 4vh 0vh 6vh 0vh;">
+                <div class="form-group" >
+                    <label>Number of partitions: </label>
+                    <input type="text" class="form-control" id="num-parts" placeholder="Enter number of partitions" style="width: 150% !important;">
+                </div>
+                <button type="submit" class="btn btn-success" id="num-parts-btn">Next</button> 
+            </div>
+            <div id="parts-size-form" class="m-2" style="width: 150% !important;">
+               
+            </div>
+            
+        </div>
+    </div>
+        <div class="col-md-5">   
+             
+            <div id="canvas" class="ml-5 mt-5">
+            </div>     
+        </div>    
+        <div class="col-md-3 m-5">
+            <div style="padding-bottom: 200px">
+                <div id="add-rem-pro-btns">
+            </div>
+            <div class="m-2" id="add-rem-pro">
+            </div> 
+            </div>
+            <div id="input-q-table">
+            </div>        
+        </div>  
+        
+    
+
+    <script src="nf1.js"></script>   
+
+</div>
+
+</body>
+
+</html>

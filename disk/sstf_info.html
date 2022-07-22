@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html style="background-color: #DFDFDE;">
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+        .info_part{
+            display: flex;
+            flex-direction: column;
+            background-color: antiquewhite;
+            padding: 20px;
+        }
+		.info_part p,li{
+			font-size: 1.2em;
+			line-height: 2em;
+		}
+		.go_back{
+			border-radius: 0.2em;
+		}
+
+		.go_back a{
+			text-decoration: none;
+			font-size: 1em;
+		}
+		.go_back button:hover{
+			background-color: rgb(112, 118, 118);
+		}
+
+		.info_part img{
+			width:60%;
+		}
+		p{
+			background-color: #F56D91;
+			padding: 10px;
+			border-radius: 10px;
+
+		}
+		h2{
+			text-align: center;
+		}
+		img{
+			align-self: center;
+		}
+		
+
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #7a7aab;">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white;" href="index.html">Home</a>
+            </li>
+		</ul>
+	</div>
+</nav>
+			  
+			  
+<div class="jumbotron" style="background-color: #DFDFDE;">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>Shortest Seek Time First</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div class="info_part" style="background-color: #F7F5F2;">
+		<h2><b>Introduction</b></h2>
+		<p>SSTF is another type of scheduling algorithm. In this type of disk scheduling, the job which has less seek time will be executed first. So, in SSTF (shortest seek time first) scheduling, we have to calculate the seek time first. and after calculating the seek time, each request will be served on the basis of seek time. The request which is close to the disk arm will be first executed. There are some drawbacks in FCFS. To overcome the limitations that arise in the FCFS. SSTF scheduling is implemented.</p>
+		<hr>
+		<h2><b>Advantages</b></h2>
+		<p>
+			
+				1. In SSTF disk scheduling, the average response time is decreased.
+		</p><p>	
+				2. Increased throughput.
+			 
+		</p>
+
+		<hr>
+		<h2><b>Disdvantages</b></h2>
+		<p>
+			
+			1.	In SSTF, there may be a chance of starvation.
+		</p><p>	
+			2.	SSTF is not an optimal algorithm.			
+		</p>
+		<p>3.	There are chances of overhead in SSTF disk scheduling because, in this algorithm, we have to calculate the seek time in advanced.</p>
+		<p>4.	The speed of this algorithm can be decreased because direction could be switched frequently.</p>
+
+		<hr>
+		<h2><b>Example</b></h2>
+		<p>Consider a disk that contains 200 tracks (0-199). The request queue includes track number 82, 170, 43, 140, 24, 16, 190, respectively. The current position of the read/write head is 50.</p>
+		<br>
+		<p>Before solving the above example, we have to know about the seek time.
+			Seek Time: -Seek time is the time required to move the desired track.
+			To find the seek time, we can use this simple formula. seek time = Destination - Source or = Source - Destination
+			Now, we can solve the given example.
+			As mentioned in the following example, disk contains 200 tracks. So, we will take a track line between 0 to 199. The current position of the read/write head is 50. So, we start at 50. We can see in the following figure that the current or initial position of read/write head is 50. Now for further movement of read/write head, we calculate the seek time. 
+			</p>
+		<br>
+		<img src="./sstf.png" alt="sstf img">
+		<br>
+		<p>
+			
+			Total Number of cylinders moved by the head = (50-16) + (190-16) = 208
+			
+		</p>
+		<br>
+		<button class="go_back" style="width: 80px; margin-left: 500px;"> <a href="index.html"> Go back</a></button>
+
+    
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="./scheduling.css">
+
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white; padding: 0rem; font-size: 1.2rem; margin:0rem 0.6rem;" href="index.html">Home</a>
+            </li>
+		</ul>
+	</div>
+</nav>
+			  
+<div class="jumbotron">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>Priority Scheduling (Pre-emptive)</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div class="info_part">
+		<h2><b>Introduction</b></h2>
+		<p>In Preemptive Priority Scheduling, at the time of arrival of a process in the ready queue, its Priority is compared with the priority of the other processes present in the ready queue as well as with the one which is being executed by the CPU at that point of time. The One with the highest priority among all the available processes will be given the CPU next. In the preemptive priority scheduling, the job which is being executed can be stopped at the arrival of a higher priority job.</p>
+		<hr>
+		<h2><b>Example</b></h2>
+		<p>There are 7 processes P1, P2, P3, P4 and P5 given. Their respective priorities, Arrival Times and Burst times are given in the table below.</p>
+		<img src="./pr_ex.png" alt="table">
+		<br>
+		<div class="steps">
+		<p><b>Step 0)</b> At time=0, Process P1 and P2 arrive. P1 has higher priority than P2. <br> The execution begins with process P1, which has burst time 4.</p>
+		<p><b>Step 1)</b> At time=1, no new process arrive. Execution continues with P1.</p>
+		<p><b>Step 2)</b> At time=2, no new process arrives, so you can continue with P1. P2 is in the waiting queue.</p>
+		<p><b>Step 3)</b> At time=3, no new process arrives so you can continue with P1. P2 process still in the waiting queue.</p>
+		<p><b>Step 4)</b> At time=4, P1 has finished its execution. P2 starts execution.</p>
+		<p><b>Step 5)</b> At time=5, no new process arrives, so we continue with P2.</p>
+		<p><b>Step 6)</b> At time=6, P3 arrives. P3 is at higher priority (1) compared to P2 having priority (2). <br> P2 is preempted, and P3 begins its execution.</p>
+		<p><b>Step 7)</b> At time=7, no-new process arrives, so we continue with P3. P2 is in the waiting queue.</p>
+		<p><b>Step 8)</b> At time=8, no new process arrives, so we can continue with P3.</p>
+		<p><b>Step 9)</b> At time=9, no new process comes so we can continue with P3.</p>
+		<p><b>Step 10)</b> At time=10, no new process comes, so we continue with P3</p>
+		<p><b>Step 11)</b> At time=11, P4 arrives with priority 4. P3 has higher priority, so it continues its execution.</p>
+		<p><b>Step 12)</b> At time=12, P5 arrives. P3 has higher priority, so it continues execution.</p>
+        <p><b>Step 12)</b> At time=13, P3 completes execution. We have P2, P4, P5 in ready queue. <br> P2 and P5 have equal priority. Arrival time of P2 is before P5. So P2 starts execution.</p>
+        <p><b>Step 12)</b> At time=14, the P2 process has finished its execution. P4 and P5 are in <br> the waiting state. P5 has the highest priority and starts execution.</p>
+        <p><b>Step 12)</b> At time=15, P5 continues execution.</p>
+        <p><b>Step 12)</b> At time=16, P5 is finished with its execution. P4 is the only process left. It starts execution.</p>
+        <p><b>Step 12)</b> At time=20, P5 has completed execution and no process is left.</p>
+        <p><b>Step 12)</b> Let's calculate the average waiting time for the above example.</p>
+
+		</div>
+		<br>
+		<img src="./pr_gt.png" alt="gt">
+		<br>
+		<p>The Turnaround time and the waiting time are calculated by using the following formula.</p>
+		<strong>Turn Around Time = Completion Time - Arrival Time </strong>
+    	<strong> Waiting Time = Turnaround time - Burst Time </strong>
+		<br>
+		<img src="./pr_tat.png" alt="tat">
+		<br>
+		<img src="./pr_cal.png" alt="cal" style="width:32%;">
+		<br>
+		<br>
+		<h2><b>Advantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>Easy to use scheduling method</li>
+                <li>Processes are executed on the basis of priority so high priority does not need to wait for long which saves time</li>
+                <li>This method provides a good mechanism where the relative important of each process may be precisely defined.</li>
+                <li>If you know the total number of processes on the run queue, then you <br> can also assume the worst-case response time for the same process.</li>
+                <li>Suitable for applications with fluctuating time and resource requirements.</li>
+			</ol>
+		</div>
+		<br>
+		<h2><b>Disadvantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>If the system eventually crashes, all low priority processes get lost.</li>
+                <li>If high priority processes take lots of CPU time, then the lower priority processes may starve <br> and will be postponed for an indefinite time.</li>
+                <li>This scheduling algorithm may leave some low priority processes waiting indefinitely.</li>
+                <li>A process will be blocked when it is ready to run but has to wait for the CPU because some other <br> process is running currently.</li>
+                <li>If a new higher priority process keeps on coming in the ready queue, then the process <br> which is in the waiting state may need to wait for a long duration of time.</li>
+			</ol>
+		</div>
+		<br>
+		<button class="go_back"> <a href="index.html"> Go back</a></button>
+
+    
+    </div>
+</body>
+</html>

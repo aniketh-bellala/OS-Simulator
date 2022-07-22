@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- dont remove this  -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans"
+      rel="stylesheet"
+    />
+    <script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+    <!-- for zing chart js -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+      zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+      ZC.LICENSE = [
+        "569d52cefae586f634c54f86dc99e6a9",
+        "ee6b7db5b51705a13dc2339db3edaf6d",
+      ];
+    </script>
+
+    <style>
+      .tdm-abc {
+        display: block;
+      }
+
+      .tdm-hide {
+        display: none;
+      }
+
+      .tdm-heading {
+        color: #5cdb95;
+        margin-left: 34%;
+        font-size: 33px;
+      }
+
+      .tdm-choices {
+        background-color: #19181a;
+        color: white;
+        font-weight: bold;
+      }
+
+      .tdm-button {
+        width: 200px;
+        height: 50px;
+        border: solid 2px #282626;
+        background-color: #282626;
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+        font-family: "PT Sans", sans-serif;
+        font-size: 18px;
+      }
+      .tdm-footer {
+        margin-left: 30%;
+      }
+
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+      }
+
+      #tdm-input {
+        font-size: 20px;
+        width: 120px;
+        height: 40px;
+        border: solid 2px #282626;
+        border-radius: 5px;
+      }
+
+      .tdm-head {
+        width: 150px;
+        height: 50px;
+        border: solid 2px #282626;
+        border-bottom: solid 2px #282626;
+        border-radius: 5px;
+      }
+
+      body {
+        font-family: "PT Sans", sans-serif;
+        animation-name: FadeOut;
+        animation-duration: 2s;
+        background-color: #DFDFDE;
+
+      }
+      h1 {
+        font-family: "impact", PT Sans, serif;
+        font-size: 60px;
+      }
+      h2 {
+        font-family: "impact", PT Sans, serif;
+        font-size: 40px;
+      }
+      h3 {
+        font-family: PT Sans, serif;
+        font-size: 30px;
+      }
+      .options button {
+        font-family: "PT Sans", sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      @keyframes FadeOut {
+        0% {
+          /* position: absolute; */
+          opacity: 0;
+        }
+
+        75% {
+          /* position: absolute; */
+          opacity: 0.75;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#7a7aab;">
+      <a
+        class="navbar-brand"
+        href="./index.html"
+        style="color: white; font-size: 20px"
+        >Home</a
+      >
+      
+    </nav>
+    <br /><br />
+    <div class="page-header">
+      <h1 align="center" style="font-variant: small-caps">
+        SCAN DISK SCHEDULING
+      </h1>
+    </div>
+
+    <!-- <div style="color:black">
+		<div style="margin-top:5%;position:absolute;margin-left:5%;">
+			<h3 style="font-weight: bold"> Enter the following details</h3>
+			<div style="margin-top:8% ;position: absolute;width: 300px;font-size: 25px"><label>HEAD</label><input class="tdm-head" type="number" min="0" style="margin-left: 10%"></div>
+			<div style="margin-top:40% ;position: absolute;width: 300px;font-size: 25px"><label>FIRST cylinder</label><input class="tdm-head" type="number" min="0" style="margin-left: 10%"></div>
+			<div style="margin-left:80%;margin-top:40% ;position: absolute;width: 300px;font-size: 25px"><label>LAST cylinder</label><input class="tdm-head" type="number" min="0" style="margin-left: 10%"></div>
+		</div >
+	</div> -->
+    <div>
+      <div style="margin-left: 70px; font-size: 20px; margin-top: 80px">
+        <label>HEAD</label
+        ><input
+          class="tdm-head"
+          type="number"
+          min="0"
+          style="margin-right: 10%; margin-left: 10px"
+        />
+        <label>FIRST cylinder</label
+        ><input
+          class="tdm-head"
+          type="number"
+          min="0"
+          style="margin-right: 10%; margin-left: 10px"
+        />
+        <label>LAST cylinder</label
+        ><input
+          class="tdm-head"
+          type="number"
+          min="0"
+          style="margin-right: 10%; margin-left: 10px"
+        />
+      </div>
+    </div>
+    <div style="margin-top: 5%; margin-left: 5%; font-size: 25px">
+      Enter requests (Only 10 allowed)
+
+      <button
+        class="tdm-button a"
+        onclick="myFunction()"
+        style="display: block; margin-top: 10px"
+      >
+        Add Request
+      </button>
+      <button
+        class="tdm-button a"
+        onclick="calculate()"
+        style="width: 300px; display: block; margin-top: 10px"
+      >
+        Calculate Head Movements
+      </button>
+
+      <button
+        class="tdm-button b"
+        onclick="resetOn()"
+        style="width: 300px; display: none; margin-top: 10px"
+      >
+        Reset
+      </button>
+    </div>
+
+    <div style="margin-top: -5%; margin-left: 5%">
+      <input
+        id="tdm-input"
+        class="tdm-hide"
+        type="number"
+        min="0"
+        style="
+          position: absolute;
+          margin-top: 10%;
+          left: 0%;
+          margin-left: 5px;
+          text-align: center;
+        "
+      />
+      <input
+        class="tdm-hide"
+        id="tdm-input"
+        type="number"
+        min="0"
+        style="
+          position: absolute;
+          margin-top: 10%;
+          left: 9%;
+          margin-left: 15px;
+          text-align: center;
+        "
+      />
+      <input
+        class="tdm-hide"
+        id="tdm-input"
+        type="number"
+        min="0"
+        style="
+          position: absolute;
+          margin-top: 10%;
+          left: 19%;
+          margin-left: 15px;
+          text-align: center;
+        "
+      />
+      <input
+        class="tdm-hide"
+        id="tdm-input"
+        type="number"
+        min="0"
+        style="
+          position: absolute;
+          margin-top: 10%;
+          left: 29%;
+          margin-left: 15px;
+          text-align: center;
+        "
+      />
+      <input
+        class="tdm-hide"
+        id="tdm-input"
+        type="number"
+        min="0"
+        style="
+          position: absolute;
+          margin-top: 10%;
+          left: 39%;
+          margin-left: 15px;
+          text-align: center;
+        "
+      />
+      <input
+        class="tdm-hide"
+        id="tdm-input"
+        type="number"
+        min="0"
+        style="
+          position: absolute;
+          margin-top: 10%;
+          left: 49%;
+          margin-left: 15px;
+          text-align: center;
+        "
+      />
+      <input
+        class="tdm-hide"
+        id="tdm-input"
+        type="number"
+        min="0"
+        style="
+          position: absolute;
+          margin-top: 10%;
+          left: 59%;
+          margin-left: 15px;
+          text-align: center;
+        "
+      />
+      <input
+        class="tdm-hide"
+        id="tdm-input"
+        type="number"
+        min="0"
+        style="
+          position: absolute;
+          margin-top: 10%;
+          left: 69%;
+          margin-left: 15px;
+          text-align: center;
+        "
+      />
+      <input
+        class="tdm-hide"
+        id="tdm-input"
+        type="number"
+        min="0"
+        style="
+          position: absolute;
+          margin-top: 10%;
+          left: 79%;
+          margin-left: 15px;
+          text-align: center;
+        "
+      />
+      <input
+        class="tdm-hide"
+        id="tdm-input"
+        type="number"
+        min="0"
+        style="
+          position: absolute;
+          margin-top: 10%;
+          left: 89%;
+          margin-left: 15px;
+          text-align: center;
+        "
+      />
+    </div>
+
+    <br /><br /><br />
+
+    <p id="output"></p>
+    <div
+      id="chartContainer"
+      style="
+        height: 300px;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 10%;
+      "
+    ></div>
+
+    <div class="tdm-hide" id="s_graph">
+      <button
+        class="tdm-button"
+        onclick="scanModal()"
+        style="width: 260px; height: 60px; margin-left: 5%; margin-top: 3%"
+      >
+        Show Header Movement
+      </button>
+    </div>
+    <!-- modal buttons -->
+    <br /><br />
+    <div class="tdm-hide" id="graph_section" align="center">
+      <h3 style="font-weight: bold">HEADER MOVEMENT</h3>
+      <h4 style="font-weight: bold">
+        X-axis: Request Track Number : Y-axis: Request Number
+      </h4>
+    </div>
+
+    <div
+      id="chartContainer_scan"
+      style="
+        height: 400px;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 5%;
+      "
+    ></div>
+
+    <p id="input_scan"></p>
+  </body>
+
+  <script>
+    var x = 2,
+      max_val;
+    var z = 0;
+    function myFunction() {
+      x = x + 1;
+      var h1 = document.getElementsByTagName("input")[x];
+      var att = document.createAttribute("class");
+      att.value = "tdm-abc";
+      h1.setAttributeNode(att);
+    }
+
+    function resetOn() {
+      if (z == 1) {
+        var hide = document.getElementsByClassName("b");
+        if (hide[0].style.display === "none") {
+          hide[0].style.display = "block";
+        } else {
+          hide[0].style.display = "none";
+        }
+        z = 0;
+      } else {
+        var hide = document.getElementsByClassName("a");
+        if (hide[0].style.display === "none") {
+          hide[0].style.display = "block";
+          hide[1].style.display = "block";
+        } else {
+          hide[0].style.display = "none";
+          hide[1].style.display = "none";
+        }
+        hide = document.getElementsByClassName("b");
+        if (hide[0].style.display === "none") {
+          hide[0].style.display = "block";
+        } else {
+          hide[0].style.display = "none";
+        }
+        for (var i = 3; i <=x; i++) {
+          var h1 = document.getElementsByTagName("input")[i];
+          var att = document.createAttribute("class");
+          att.value = "tdm-hide";
+          h1.setAttributeNode(att);
+          h1.value='';
+        }
+        x=2;
+        dp_scan = [];
+        scan_values = [];
+        scanv=0;
+      }
+    }
+
+    var scan = 0;
+
+    function calculate() {
+      var hide = document.getElementsByClassName("a");
+      if (hide[0].style.display === "none") {
+        hide[0].style.display = "block";
+        hide[1].style.display = "block";
+      } else {
+        hide[0].style.display = "none";
+        hide[1].style.display = "none";
+      }
+
+      z = 1;
+
+      resetOn();
+
+      var min = parseInt(document.getElementsByTagName("input")[1].value);
+      var max = parseInt(document.getElementsByTagName("input")[2].value);
+
+      if (max <= min) {
+        alert("invalid cylinder numbers");
+        return;
+      }
+
+      var scanv = 0;
+
+      scanv = calculate_scan();
+			if(scanv == -10)
+				return;
+
+      var f = document.getElementById("s_graph");
+      var att = document.createAttribute("class");
+      att.value = "s_show";
+      f.setAttributeNode(att);
+
+      show_graph(scanv);
+    }
+
+    // function show_graph_section(){
+    // 	var f = document.getElementById("graph_section");
+    // 	var att = document.createAttribute("class");
+
+    // 	att.value = "s_show";		//s_show is not defined
+    // 	f.setAttributeNode(att);
+    //   fcfsModal()
+    // }
+    var dp_scan = [];
+    var scan_values = [];
+
+    function calculate_scan()
+	{
+		var in_arr=[];
+		var sum=0;
+		var y_i = 0;
+
+		var head = parseInt(document.getElementsByTagName("input")[0].value);
+ 		var max = parseInt(document.getElementsByTagName("input")[2].value);
+ 		var min = parseInt(document.getElementsByTagName("input")[1].value);
+		if(head > max)
+ 		{
+ 			alert("Head value is larger than last cylinder number");
+ 			return -10;
+ 		}
+
+ 		if(head < min)
+ 		{
+ 			alert("scan head is smaller than first cylinder number");
+ 			return -10;
+ 		}
+		scan_values.push(head);
+		
+		var max = document.getElementsByTagName("input")[2].value;
+		
+		for(var i=3;i<=x;++i)
+		{
+			var z= parseInt(document.getElementsByTagName("input")[i].value);
+			if(z > max)
+			{
+				alert("input "+z+" is greater than the last cylinder");
+				return -10;
+			}
+
+			if(z < min)
+			{
+				alert("input "+z+" is smaller than the first cylinder");
+				return -10;
+			}
+			in_arr.push(z);
+		}
+
+		//sort the inputs
+		in_arr.sort(function(a, b){return a - b});
+		
+		
+		
+		var temp;
+		var i,j,flag;
+
+		for(i=in_arr.length-1;i>=0;--i)	
+		{			
+			var p = parseInt(in_arr[i]);
+			if(p < head)
+			{
+				flag = i+1;
+				break;
+			}
+		}
+			sum = sum + (max - head);
+		var p_i;
+		for(j=flag;j<in_arr.length;++j)
+		{
+			y_i++;
+			p_i = parseInt(in_arr[j]);
+			scan_values.push(p_i);
+		}
+		
+		y_i++;
+    if(in_arr[in_arr.length-1]!=max)
+		scan_values.push(max);
+
+		for(j=flag-1; j>=0 ;--j)
+		{
+			y_i++;
+			p_i = parseInt(in_arr[j]);
+			scan_values.push(p_i);
+		}
+
+		var int = parseInt(in_arr[0]);
+		sum = sum + (max - int);
+
+		allocate_scan();
+		return sum;
+	}
+
+    window.onload = function () {
+      CanvasJS.addColorSet("myColors", [
+        //colorSet Array
+        "orange",
+      ]);
+    };
+
+    function show_graph(scan)
+	{
+		
+		var chart = new CanvasJS.Chart("chartContainer", {
+		title:{
+			text: "RESULTS OF SCAN SCHEDULING ALGORITHMS"              
+		},
+		
+		data: [              
+		{
+			// Change type to, "line", "splineArea", etc.
+			type: "column",				
+			dataPoints: [
+      { label: "SCAN", y: scan  }
+			]
+		}
+		],
+
+		axisY:{
+			title:"Total Head Movement"
+		},
+
+		animationEnabled : true,
+		animationDuration :6000,
+		colorSet: "myColors"
+	});
+	chart.render();
+	}
+
+    //example of datapoints_fcfs:-
+    var data_scan;
+    function allocate_scan(){
+		var d=-1;
+		for(var i=0;i<scan_values.length;++i)
+		{
+			d++;
+			var a = parseInt(scan_values[i]);
+			dp_scan.push([a,d]);
+		}
+    data_scan={
+			values:dp_scan
+		};
+	}
+
+  
+
+    function scanModal()
+	{
+		var max_val = document.getElementsByTagName("input")[2].value;
+		zingchart.render({
+        id:"chartContainer_scan",
+        output:"svg",
+        height:500,
+        width:"80%",
+        data:{
+            "type":"line",
+            "title":{
+                "text":"SCAN Header Movement"
+            },
+            "series":[
+                data_scan
+            ]
+        }
+    	});	
+	}
+
+  </script>
+</html>

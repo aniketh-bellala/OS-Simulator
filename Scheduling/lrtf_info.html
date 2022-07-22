@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="./scheduling.css">
+
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+		
+
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white; padding: 0rem; font-size: 1.2rem; margin:0rem 0.6rem;" href="index.html">Home</a>
+            </li>
+		</ul>
+	</div>
+</nav>
+			  
+<div class="jumbotron">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>Longest Response Time First</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div class="info_part">
+		<h2><b>Introduction</b></h2>
+		<p>The Longest Remaining time First(LRTF) scheduling is the preemptive version of Longest Job First(LJF) scheduling. This scheduling algorithm is used by the operating system in order to schedule incoming processes so that they can be executed in a systematic way.</p>
+        
+        <p>With this algorithm, the process having the maximum remaining time is processed first. In this, we will check for the maximum remaining time after an interval of time(say 1 unit) that is there another process having more Burst Time arrived up to that time.</p>
+		<hr>
+		<h2><b>Example</b></h2>
+		<p>Let's take an example of The LRTF scheduling algorithm. In the Following schedule, there are 4 processes with process ID P1, P2, P3 and P4. P1 arrives at time 1, P2 at time 2, P3 at time 3 and P4 arrives at time 4 in the ready queue. The processes and their respective Arrival and Burst time are given in the following table.</p>
+		<img src="./lrtf_ex.png" alt="table">
+		<br>
+		<div class="steps">
+		<p><b>Step 0)</b> The CPU is idle for 1 second interval.</p>
+		<p><b>Step 1)</b> At time = 1, Available Process : P1. So, P1 is selected and executed for 1s.</p>
+		<p><b>Step 2)</b> At time = 2, Available Process : P1, P2. So, P2 is selected and executed for 1s (since BT(P1)=1 which is less than BT(P2) = 4).</p>
+		<p><b>Step 3)</b> At time = 3, Available Process : P1, P2, P3. So, P3 is selected and executed for 1s (since, BT(P1) = 1 , BT(P2) = 3 , BT(P3) = 6).</p>
+		<p><b>Step 4)</b> Repeat the above steps until the execution of all processes.</p>
+		<p><b>Step 5)</b> Let's calculate the average waiting time for above example.</p>
+		</div>
+		<br>
+		<img src="./lrtf_gt.png" alt="gt">
+		<br>
+		<p>The Turnaround time and the waiting time are calculated by using the following formula.</p>
+		<strong>Turn Around Time = Completion Time - Arrival Time </strong>
+    	<strong> Waiting Time = Turnaround time - Burst Time </strong>
+		<br>
+		<img src="./lrtf_tat.png" alt="tat">
+		<br>
+		<img src="./lrtf_cal.png" alt="cal" style="width:32%;">
+		<br>
+		<br>
+		<h2><b>Advantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>This algorithm is easy to implement and simple</li>
+				<li>This algorithm is starvation-free because all processes get a fair share of CPU.</li>
+				<li>All the processes get completed by the time the longest job reaches its completion.</li>
+			</ol>
+		</div>
+		<br>
+		<h2><b>Disadvantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>With this algorithm, the average waiting time and turnaround time are too high, even if burst time is less for each process.</li>
+				<li>In this process with less burst time(smaller processes) need to wait for CPU in order to finish processes with larger burst size.</li>
+				<li>The valuable time of CPU is consumed by context switch, which can be utilized for the execution of processes.</li>
+			</ol>
+		</div>
+		<br>
+		<button class="go_back"> <a href="index.html"> Go back</a></button>
+
+    
+    </div>
+</body>
+</html>

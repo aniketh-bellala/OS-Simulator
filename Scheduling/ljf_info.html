@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./bootstrap.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<link rel="stylesheet" href="./scheduling.css">
+
+<script src="https://use.fontawesome.com/618ecf48b6.js"></script>
+
+</head>
+<style>
+		body{
+			font-family: 'PT Sans', sans-serif;
+		}
+		ul{
+			list-style-type: none;
+		}
+		a{
+			font-size: 1.2em;
+		}
+
+</style>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+	<a class="navbar-brand" href="../os_sim.html" style="color:white;">OS Simulator</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active" style="color:white;">
+                <a class="nav-link" style="color:white; padding: 0rem; font-size: 1.2rem; margin:0rem 0.6rem;" href="index.html">Home</a>
+            </li>
+		</ul>
+	</div>
+</nav>
+			  
+<div class="jumbotron">
+	<div class="displat-3" style="text-align: center;margin-bottom: 32px;">
+		<h1>Longest Job First</h1>
+	</div>
+	<hr class="my-2">
+	<br/>
+	<div class="info_part">
+		<h2><b>Introduction</b></h2>
+		<p>Longest Job First <span>(LJF)</span> is a non-preemptive scheduling algorithm. This algorithm is based upon the burst time of the processes. The processes are put into the ready queue based on their burst times i.e., in descending order of the burst times. As the name suggests this algorithm is based upon the fact that the process with the largest burst time is processed first. The burst time of only those processes is considered that have arrived in the system until that time. </p>
+		<hr>
+		<h2><b>Example</b></h2>
+		<p>Let's take an example of The <span>(LJF)</span> scheduling algorithm. In the Following schedule, there are 4 processes with process ID P1, P2, P3 and P4. P1 arrives at time 0, P2 at time 1, P3 at time 2 and P4 arrives at time 3 in the ready queue. The processes and their respective Arrival and Burst time are given in the following table.</p>
+		<img src="./ljf_ex.png" alt="table">
+		<br>
+		<div class="steps">
+		<p><b>Step 0)</b> At time = 0, there is one process that is available having 2 units of burst time. So P1 is selected and executed for 2s.</p>
+		<p><b>Step 1)</b> At time = 2 i.e. after P1 gets executed, The Available Processes are P2, P3. As you can see the burst time of P3 is more than P2. So, P3 is selected and executed for 5s.</p>
+		<p><b>Step 2)</b> At time = 7 i.e. after the execution of P3, the Available Processes are P2, P4. As you can see the burst time of P4 is more than P2. So, P4 is selected and executed for 7s.</p>
+		<p><b>Step 3)</b> Finally, after the completion of P4 process P2 is executed for 3s.</p>
+		<p><b>Step 4)</b> Let's calculate the average waiting time for above example.</p>
+		</div>
+		<br>
+		<img src="./ljf_gt.png" alt="gt">
+		<br>
+		<p>The Turnaround time and the waiting time are calculated by using the following formula.</p>
+		<strong>Turn Around Time = Completion Time - Arrival Time </strong>
+    	<strong> Waiting Time = Turnaround time - Burst Time </strong>
+		<br>
+		<img src="./ljf_tat.png" alt="tat">
+		<br>
+		<img src="./ljf_cal.png" alt="cal" style="width:32%;">
+		<br>
+		<br>
+		<h2><b>Advantages</b></h2>
+		<div class="para">
+            <h4>NIL</h4>
+		</div>
+		<br>
+		<h2><b>Disadvantages</b></h2>
+		<div class="para">
+			<ol>
+				<li>This algorithm gives very high average waiting time and average turn-around time for a given set of processes.</li>
+				<li>This may lead to convoy effect.</li>
+				<li>It may happen that a short process may never get executed and the system keeps on executing the longer processes.</li>
+                <li>It reduces the processing speed and thus reduces the efficiency and utilization of the system.</li>
+			</ol>
+		</div>
+		<br>
+		<button class="go_back"> <a href="index.html"> Go back</a></button>
+
+    
+    </div>
+</body>
+</html>
